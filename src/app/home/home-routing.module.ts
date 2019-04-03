@@ -9,7 +9,10 @@ const routes: Routes = [
   path: '',
   component: HomeComponent,
   children: [
-   
+    {
+      path: '',
+      component:  HomecontableComponent
+    },
     {
       path: 'contables',
       component:  HomecontableComponent
@@ -18,6 +21,7 @@ const routes: Routes = [
       path: 'informaticas',
       component:  HomeinformaticoComponent
     }
+   
     
   ]
 

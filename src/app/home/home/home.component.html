@@ -4,9 +4,17 @@
     <app-homecuerpo></app-homecuerpo>
 </div>
 
-<div>
-    <a routerLink="contables" class="button"> <span> Tutorial Links</span> </a>
-    <a routerLink="informaticas" class="button"> <span> More Info</span> </a>
-    <a routerLink="authors" class="button"><span> Credit Authors</span></a>
+<div class="container"  >
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" routerLink='contables'>Contables</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" routerLink='informaticas'>Informaticas</a>
+        </li>
+      </ul>
 </div>
+<div class="container">
+    <br>
   <router-outlet></router-outlet>
+</div>
