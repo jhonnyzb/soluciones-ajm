@@ -4,25 +4,30 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule'
+  },
+  {
+    path: 'about',
+    loadChildren: './about/about.module#AboutModule'
+  },
+  {
+    path:'',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }
   //{
-  // path: '',
-   // loadChildren: './home/home.module#HomeModule'
- // },
- // {
- //   path: 'about',
-  //  loadChildren: './about/about.module#AboutModule'
-  //},
-  //{
-   // path: '', component: LayoutPrincipalComponent,
-     // children: [
-       // { path: '', component: PagInicioComponent, pathMatch: 'full',
-      
-    //  }
+  // path: '', component: LayoutPrincipalComponent,
+  // children: [
+  // { path: '', component: PagInicioComponent, pathMatch: 'full',
 
-        //{ path: 'nosotros', component: PagNosotrosComponent  }
-        //{ path: 'noticia-single', component: NoticiaSingleComponent }
-    //  ]
-  
+  //  }
+
+  //{ path: 'nosotros', component: PagNosotrosComponent  }
+  //{ path: 'noticia-single', component: NoticiaSingleComponent }
+  //  ]
+
   //}
 
 ];

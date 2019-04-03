@@ -1,0 +1,33 @@
+<div class="mar">
+  <div class="container">
+  <div class="col-md-12">
+    <!-- Carousel aqui -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" *ngFor="let image of InfoSlider;let i = index"
+          [attr.data-slide-to]="i" ngClass="i == 0 ? 'active' : ''"></li>
+      </ol>
+      <div class="carousel-inner">
+
+        <div class="carousel-item" *ngFor="let image of InfoSlider; let k = index"
+          [ngClass]="k == 0 ? 'item active' : 'item'">
+          <img class="d-block w-100" [src]="image.url" style="height:500px">
+          <div class="carousel-caption d-none d-md-block">
+            <h4>{{image.titulo}}</h4>
+            <p>{{image.descripcion}}</p>
+          </div>
+        </div>
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
