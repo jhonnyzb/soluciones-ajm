@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeservicesService } from '../../homeservices.service';
 
 @Component({
   selector: 'app-homecontable',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomecontableComponent implements OnInit {
 
-  constructor() { }
+  InfoPieContable: Array<any> = new Array<any>();
+  constructor(private afs: HomeservicesService) { }
 
   ngOnInit() {
+    this.getData();
   }
 
+  getData(){
+    //this.InfoSlider = this.afs.getimagenes(); 
+    this.afs.getInfoPieContable().subscribe(data => this.InfoPieContable = data);
+
+  }
 }

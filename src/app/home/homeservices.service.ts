@@ -25,5 +25,9 @@ export class HomeservicesService {
     return this.firestore.collection('Home_Cuerpo').valueChanges();
   }
 
+  public getInfoPieContable() {
+    
+    return this.firestore.collection('Home_Pie_C').valueChanges();
+  }
   
 }
