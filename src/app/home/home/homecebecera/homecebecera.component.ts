@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeservicesService } from '../../homeservices.service';
+import { HomeInterfacesSlider } from '../../home-interfaces';
 
 
 @Component({
@@ -9,10 +10,9 @@ import { HomeservicesService } from '../../homeservices.service';
 })
 export class HomecebeceraComponent implements OnInit {
 
-  InfoSlider: Array<any> = new Array<any>();
+  InfoSlider: Array<HomeInterfacesSlider> = new Array<HomeInterfacesSlider>();
   
-  //public  InfoSlider: Observable<any> = null;
-
+  
   constructor(private afs: HomeservicesService) { }
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class HomecebeceraComponent implements OnInit {
 
 
   getData(){
-    //this.InfoSlider = this.afs.getimagenes(); 
+    
     this.afs.getInfoSlider().subscribe(data => this.InfoSlider = data);
     
   }

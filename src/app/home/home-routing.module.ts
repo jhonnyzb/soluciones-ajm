@@ -14,18 +14,19 @@ const routes: Routes = [
       component:  HomecontableComponent
     },
     {
-      path: 'contables',
-      component:  HomecontableComponent
-    },
-    {
       path: 'informaticas',
       component:  HomeinformaticoComponent
+    },
+    { 
+      path: '**', 
+      component: HomecontableComponent 
     }
    
-    
   ]
 
-}
+},
+
+
 ];
 
 @NgModule({

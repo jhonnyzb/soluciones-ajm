@@ -16,6 +16,10 @@ const routes: Routes = [
     path:'',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  { 
+    path: '**', 
+    loadChildren: './home/home.module#HomeModule'
   }
   //{
   // path: '', component: LayoutPrincipalComponent,

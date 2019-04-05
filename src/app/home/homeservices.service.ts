@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { HomeInterfacesSlider, HomeInterfacesCuerpo, HomeInterfacesPie } from './home-interfaces';
+
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeservicesService {
-  //private itemsCollection: AngularFirestoreCollection<any>;
-  //items: Observable<any[]>;
   
   constructor(private firestore: AngularFirestore) 
   {
@@ -16,18 +16,21 @@ export class HomeservicesService {
    }
 
   public getInfoSlider() {
-    //this.itemsCollection = this.firestore.collection<any>('Pag_Inicio_Slider');
-    //return this.items = this.itemsCollection.valueChanges();
-    return this.firestore.collection('Pag_Inicio_Slider').valueChanges();
+   
+    return this.firestore.collection<HomeInterfacesSlider>('Pag_Inicio_Slider').valueChanges();
   }
   public getInfoCuerpo() {
     
-    return this.firestore.collection('Home_Cuerpo').valueChanges();
+    return this.firestore.collection<HomeInterfacesCuerpo>('Home_Cuerpo').valueChanges();
   }
 
   public getInfoPieContable() {
     
-    return this.firestore.collection('Home_Pie_C').valueChanges();
+    return this.firestore.collection<HomeInterfacesPie>('Home_Pie_C').valueChanges();
+  }
+  public getInfoPieInformatica() {
+    
+    return this.firestore.collection<HomeInterfacesPie>('Home_Pie_I').valueChanges();
   }
   
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeservicesService } from '../../homeservices.service';
+import { HomeInterfacesCuerpo } from '../../home-interfaces';
 
 @Component({
   selector: 'app-homecuerpo',
@@ -9,7 +10,7 @@ import { HomeservicesService } from '../../homeservices.service';
 export class HomecuerpoComponent implements OnInit {
 
 
-  InfoCuerpo: Array<any> = new Array<any>();
+  InfoCuerpo: Array<HomeInterfacesCuerpo> = new Array<HomeInterfacesCuerpo>();
   constructor(private afs: HomeservicesService) { }
 
   ngOnInit() {
@@ -17,7 +18,7 @@ export class HomecuerpoComponent implements OnInit {
   }
 
   getData(){
-    //this.InfoSlider = this.afs.getimagenes(); 
+    
     this.afs.getInfoCuerpo().subscribe(data => this.InfoCuerpo = data);
     
   }

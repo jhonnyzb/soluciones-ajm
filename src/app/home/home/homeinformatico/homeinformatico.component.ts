@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeInterfacesPie } from '../../home-interfaces';
+import { HomeservicesService } from '../../homeservices.service';
 
 @Component({
   selector: 'app-homeinformatico',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeinformaticoComponent implements OnInit {
 
-  constructor() { }
+
+  InfoPieInformatica: Array<HomeInterfacesPie> = new Array<HomeInterfacesPie>();
+  
+  constructor(private afs: HomeservicesService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(){
+    
+    this.afs.getInfoPieInformatica().subscribe(data => this.InfoPieInformatica = data);
+
   }
 
 }
