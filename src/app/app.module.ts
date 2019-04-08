@@ -4,17 +4,22 @@ import { NgModule } from '@angular/core';
 import { FirestoreSettingsToken} from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutusuariosComponent } from './layoutusuarios/layoutusuarios.component';
+import { LayoutadminComponent } from './layoutadmin/layoutadmin.component';
+import { IniciarsesionComponent } from './iniciarsesion/iniciarsesion.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LayoutusuariosComponent,
+    LayoutadminComponent,
+    IniciarsesionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+
   ],
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]

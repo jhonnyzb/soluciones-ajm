@@ -1,39 +1,39 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LayoutusuariosComponent } from './layoutusuarios/layoutusuarios.component';
 
 
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomeModule'
+    path: 'usuarios', component: LayoutusuariosComponent,
+      children: [
+        {
+          path: 'inicio',
+          loadChildren: './modulos/inicio/inicio.module#InicioModule'
+        },
+        {
+          path: 'acercade',
+          loadChildren: './modulos/acercade/acercade.module#AcercadeModule'
+        },
+        {
+          path: '',
+          redirectTo: 'inicio',
+          pathMatch: 'full'
+        },
+      ]
   },
+
   {
-    path: 'about',
-    loadChildren: './about/about.module#AboutModule'
-  },
-  
-  {
-    path:'',
-    redirectTo: '/home',
+    path: '',
+    redirectTo: 'usuarios',
     pathMatch: 'full'
   },
-  { 
-    path: '**', 
-    loadChildren: './home/home.module#HomeModule'
+  {
+    path: '**',
+    redirectTo: '/usuarios',
+    pathMatch: 'full'
   }
-  //{
-  // path: '', component: LayoutPrincipalComponent,
-  // children: [
-  // { path: '', component: PagInicioComponent, pathMatch: 'full',
-
-  //  }
-
-  //{ path: 'nosotros', component: PagNosotrosComponent  }
-  //{ path: 'noticia-single', component: NoticiaSingleComponent }
-  //  ]
-
-  //}
 
 ];
 
