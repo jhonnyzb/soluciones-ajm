@@ -4,7 +4,8 @@ import { InicioComponent } from './inicio.component';
 import { IniciocontableComponent } from './iniciocontable/iniciocontable.component';
 import { InicioinformaticaComponent } from './inicioinformatica/inicioinformatica.component';
 
-const routes: Routes = [
+const routes: Routes =
+[
   {
     path: 'iniciouno', component: InicioComponent,
       children: [
