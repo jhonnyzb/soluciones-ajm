@@ -52,19 +52,22 @@
 </div><br><br><br>
 
 
+<div class="container">
+    <h2 class="centrar">Nuestros servicios</h2><br>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="tab" role="tabpanel">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" >
+                      <li routerLinkActive="active" ><a routerLink='contables'    >Contables</a></li>
+                      <li routerLinkActive="active" ><a routerLink='informaticas' >Informaticas</a></li>
+                  </ul>
 
-<div class="container">
-  <h2 class="centrar">Nuestros servicios</h2><br><br>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" routerLink='contables' routerLinkActive="active">Contables</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" routerLink='informaticas' routerLinkActive="active">Informaticas</a>
-        </li>
-      </ul>
-</div>
-<div class="container">
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container">
     <br>
   <router-outlet></router-outlet>
 </div>
