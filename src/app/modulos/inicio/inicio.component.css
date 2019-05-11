@@ -236,4 +236,13 @@ a:hover,a:focus{
   padding-left: 40px;
 }
 
-
+/* section5 */
+.pslider{
+height: 319px;
+width: 500px
+}
+/* section8 */
+.section8{
+  background-color:rgb(0, 174, 255);
+  
+}

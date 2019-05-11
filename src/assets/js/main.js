@@ -62,7 +62,7 @@
 	// Scrollax
    $.Scrollax();
 
-	var carousel = function() {
+	/* var carousel = function() {
 		$('.home-slider').owlCarousel({
 	    loop:true,
 	    autoplay: true,
@@ -153,7 +153,7 @@
 		});
 
 	};
-	carousel();
+	carousel(); */
 
 	$('nav .dropdown').hover(function(){
 		var $this = $(this);
@@ -241,7 +241,7 @@
 	};
 
 	
-	var counter = function() {
+/* 	var counter = function() {
 		
 		$('#section-counter').waypoint( function( direction ) {
 
@@ -266,8 +266,8 @@
 
 	}
 	counter();
-
-	var contentWayPoint = function() {
+ */
+/* 	var contentWayPoint = function() {
 		var i = 0;
 		$('.ftco-animate').waypoint( function( direction ) {
 
@@ -302,7 +302,7 @@
 		} , { offset: '95%' } );
 	};
 	contentWayPoint();
-
+ */
 
 	// navigation
 	var OnePageNav = function() {
