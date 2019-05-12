@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { InicioInterfacesSlider, InicioInterfacesCuerpo, InicioInterfacesPie, InicioInterfacesSection4 } from './iniciointerfaces';
+import { InicioInterfacesSlider, InicioInterfacesCuerpo, InicioInterfacesPie, InicioInterfacesSection4, InicioInterfacesSection5_1, InicioInterfacesSection5_2, InicioInterfacesSection8 } from './iniciointerfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -14,24 +14,58 @@ export class InicioService {
     return this.firestore.collection<InicioInterfacesSlider>('Pag_Inicio_Slider').valueChanges();
   }
 
+
   public getInicioSection2(documentId: string) {
 
     return this.firestore.collection('Inicio_section2').doc(documentId).snapshotChanges();
   }
 
+
   public getInicioSection4() {
 
     return this.firestore.collection<InicioInterfacesSection4>('Inicio_section4').valueChanges();
   }
+
+
+  public getInicioSection5_0(documentId: string) {
+
+    return this.firestore.collection('Inicio_section5').doc(documentId).snapshotChanges();
+  }
+
+
+  public getInicioSection5_1(documentId: string) {
+
+    return this.firestore.collection('Inicio_section5').doc(documentId).collection<InicioInterfacesSection5_1>('slide_section5').valueChanges();
+  }
+
+
+
+  public getInicioSection5_2(documentId: string) {
+
+    return this.firestore.collection('Inicio_section5').doc(documentId).collection<InicioInterfacesSection5_2>('progresbar_section5').valueChanges();
+  }
+
+
+  public getInicioSection8(documentId: string) {
+
+    return this.firestore.collection('Inicio_section8').doc(documentId).snapshotChanges();
+  }
+
+
   public getInfoCuerpo() {
 
     return this.firestore.collection<InicioInterfacesCuerpo>('Home_Cuerpo').valueChanges();
   }
 
+
+
   public getInfoPieContable() {
 
     return this.firestore.collection<InicioInterfacesPie>('Home_Pie_C').valueChanges();
   }
+
+
+
   public getInfoPieInformatica() {
 
     return this.firestore.collection<InicioInterfacesPie>('Home_Pie_I').valueChanges();
