@@ -186,12 +186,19 @@ font-style: italic;
 .section4 {
  text-align: center;
  font-family: Arial, Helvetica, sans-serif;
-}
-.section4 p{
-  font-size: 160%;
+ margin-bottom: 50px
 }
 .section4 b{
-  font-size: 150%;
+  font-size: 160%;
+}
+
+.section4 p{
+  font-size: 160%;
+  display: inline;
+}
+.psection4{
+  font-size: 160%;
+  color:rgb(0, 174, 255);
 }
 
 
