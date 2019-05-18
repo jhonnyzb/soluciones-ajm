@@ -16,10 +16,9 @@ export class InicioComponent implements OnInit {
   Infosection4: Array<InicioInterfacesSection4> = new Array<InicioInterfacesSection4>();
   Infosection5_1: Array<InicioInterfacesSection5_1> = new Array<InicioInterfacesSection5_1>();
   Infosection5_2: Array<InicioInterfacesSection5_2> = new Array<InicioInterfacesSection5_2>();
-  Infosection8: InicioInterfacesSection8={};
+  Infosection8: InicioInterfacesSection8 = {};
   infoheader: InicioInterfacesSection2 = {};
-  Infosection5_0: InicioInterfacesSection5_0={};
-
+  Infosection5_0: InicioInterfacesSection5_0 = {};
   constructor(private afs: InicioService) { }
 
 
@@ -32,27 +31,26 @@ export class InicioComponent implements OnInit {
 
     this.afs.getInfoSlider().subscribe((data) => {
       this.InfoSlider = data;
-      
     });
 
 
     this.afs.getInicioSection2('OMBJaqrat4KcJ0LlU9M2').subscribe((data) => {
       this.infoheader = data.payload.data();
-
+      
     });
 
     this.afs.getInicioSection4().subscribe((data) => {
       this.Infosection4 = data;
-
+     
     });
 
     this.afs.getInicioSection5_0('ZHv0hl7RQiKf5IC3VJvx').subscribe((data) => {
       this.Infosection5_0 = data.payload.data();
     })
-    
+
     this.afs.getInicioSection5_1('i5CIxJLrRhRnyfPzh1jg').subscribe((data) => {
       this.Infosection5_1 = data;
-
+      
     });
 
     this.afs.getInicioSection5_2('ykSHohz9g1DHGowLRoKz').subscribe((data) => {
@@ -69,7 +67,7 @@ export class InicioComponent implements OnInit {
 
     this.afs.getInfoCuerpo().subscribe((data) => {
       this.InfoCuerpo = data;
-    
+
     });
 
 
