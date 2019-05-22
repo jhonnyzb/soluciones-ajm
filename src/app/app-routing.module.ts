@@ -17,6 +17,14 @@ const routes: Routes = [
           loadChildren: './modulos/acercade/acercade.module#AcercadeModule'
         },
         {
+          path: 'serviciosc',
+          loadChildren: './modulos/serviciosc/serviciosc.module#ServicioscModule'
+        },
+        {
+          path: 'serviciosi',
+          loadChildren: './modulos/serviciosi/serviciosi.module#ServiciosiModule'
+        },
+        {
           path: '',
           redirectTo: 'inicio',
           pathMatch: 'full'
@@ -31,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/usuarios',
+    redirectTo: 'usuarios',
     pathMatch: 'full'
   }
 

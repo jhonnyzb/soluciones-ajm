@@ -317,3 +317,41 @@ hr.style4{
 .separate{
   margin-bottom: 2px;
 }
+
+/* section7 */
+.background {
+  background: url(../../../assets/img/Fondo.png) no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-left: 15%;
+  padding-right: 18%;
+  padding-top: 3%
+}
+
+.background p{
+  color: white;
+  font-size: 33px
+}
+hr.style5{
+  border-top: 5px solid rgb(0, 174, 255);
+  margin-right: 80%;
+  
+}
+.background .p2{
+  color: white;
+  font-size: 23px;
+}
+.divs7{
+ margin-right: 20%;
+ border-left: 1px solid white;
+ border-right: 1px solid white;
+ border-top: 1px solid white;
+ border-bottom: 1px solid white;
+}
+.divs7 a{
+  color: white;
+  margin-left: 5%;
+  margin-right: 5%
+}
