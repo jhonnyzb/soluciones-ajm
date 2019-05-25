@@ -11,7 +11,7 @@
                               <div class="card-body text-center">
                                   <p><img class=" img-fluid" [src]="data.url" alt="card image"></p>
                                   <h4 class="card-title">{{data.titulo}}</h4>
-                                  <p class="card-text">{{data.descripcion}}</p>
+                                  <p class="card-text">{{data.descripcion | slice :0 :80}}....</p>
                                   <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                               </div>
                           </div>
@@ -19,11 +19,11 @@
                       <div class="backside">
                           <div class="card">
                               <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">{{data.titulo_atras}}</h4>
-                                  <p class="card-text">{{data.descripcion_atras}}</p>
+                                  <h4 class="card-title">{{data.titulo}}</h4><br>
+                                  <p class="card-text">{{data.descripcion_atras | slice :0 :110}}.....</p><br>
                                   <ul class="list-inline">
                                       <li class="list-inline-item">
-                                          <a class="text-xs-center" routerLink='/usuarios/acercade'>Leer mas <span class="fa fa-hand-o-left"></span></a>
+                                          <a class="text-xs-center" routerLink='/usuarios/serviciosc'>Leer mas <span class="fa fa-hand-o-left"></span></a>
                                       </li>
                                   </ul>
                               </div>

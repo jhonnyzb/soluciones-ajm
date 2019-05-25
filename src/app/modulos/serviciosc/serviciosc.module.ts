@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ServicioscRoutingModule } from './serviciosc-routing.module';
 import { ServicioscComponent } from './serviciosc.component';
 
+
 @NgModule({
   declarations: [ServicioscComponent],
   imports: [
-    CommonModule,
+    CommonModule,   
     ServicioscRoutingModule
   ]
 })

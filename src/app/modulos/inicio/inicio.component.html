@@ -6,7 +6,7 @@
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" *ngFor="let image of InfoSlider;let i = index"
-            style="background-color:black" [attr.data-slide-to]="i" ngClass="i == 0 ? 'active' : ''">
+            style="background-color:black" [attr.data-slide-to]="i" [ngClass]="i == 0 ? 'active' : ''">
           </li>
         </ol>
         <div class="carousel-inner">
@@ -94,7 +94,7 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleControls" *ngFor="let indicador of Infosection5_1;let i = index"
-            style="background-color:black" [attr.data-slide-to]="i" ngClass="i == 0 ? 'active' : ''">
+            style="background-color:black" [attr.data-slide-to]="i" [ngClass]="i == 0 ? 'active' : ''">
           </li>
         </ol>
         <div class="carousel-inner">

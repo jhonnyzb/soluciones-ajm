@@ -63,13 +63,6 @@ export interface InicioInterfacesPie {
   url: string;
   titulo: string;
   descripcion: string;
-  titulo_atras: string;
-  descripcion_atras: string;
-}
-export interface InicioInterfacesPie {
-  url: string;
-  titulo: string;
-  descripcion: string;
-  titulo_atras: string;
+  palabraid:string;
   descripcion_atras: string;
 }
