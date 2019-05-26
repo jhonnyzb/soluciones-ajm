@@ -31,6 +31,7 @@ export class InicioComponent implements OnInit {
 
     this.afs.getInfoSlider().subscribe((data) => {
       this.InfoSlider = data;
+  
     });
 
 

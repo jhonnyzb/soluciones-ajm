@@ -10,16 +10,18 @@ import { InicioService } from '../inicio.service';
 export class IniciocontableComponent implements OnInit {
 
   InfoPieContable: Array<InicioInterfacesPie> = new Array<InicioInterfacesPie>();
+  constructor(private afs: InicioService) {
+  }
 
-  constructor(private afs: InicioService) { }
 
   ngOnInit() {
     this.getData();
   }
 
   getData() {
+    this.afs.getInfoPieContable().subscribe((data) => {
+      this.InfoPieContable = data;
 
-    this.afs.getInfoPieContable().subscribe(data => this.InfoPieContable = data);
-
+    });
   }
 }
