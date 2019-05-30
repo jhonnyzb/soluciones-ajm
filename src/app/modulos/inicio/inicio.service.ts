@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { InicioInterfacesSlider, InicioInterfacesCuerpo, InicioInterfacesPie, InicioInterfacesSection4, InicioInterfacesSection5_1, InicioInterfacesSection5_2, InicioInterfacesSection8 } from './iniciointerfaces';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class InicioService {
+
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -61,7 +66,14 @@ export class InicioService {
 
   public getInfoPieContable() {
 
-    return this.firestore.collection<InicioInterfacesPie>('Home_Pie_C').valueChanges();
+    return this.firestore.collection<InicioInterfacesPie>('Home_Pie_C').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as InicioInterfacesPie;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+
   }
 
 

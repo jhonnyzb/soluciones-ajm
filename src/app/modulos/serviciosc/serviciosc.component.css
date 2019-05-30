@@ -177,3 +177,50 @@ box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
 @media only screen and (max-width:479px){
     .box .title{ font-size: 20px; }
 }
+
+
+
+.link{
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+}
+.link:before,
+.link:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 5px solid coral;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0s;
+}
+.link:after{ background:  rgb(0, 174, 255); }
+.link:hover:before{
+    top: -7px;
+    left: -7px;
+}
+.link:hover:after{
+    top: 7px;
+    left: 7px;
+}
+.link span{
+    display: block;
+    padding: 7px 15px;
+    background:  rgb(0, 174, 255);
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 2;
+    transition: all 0.3s ease 0s;
+}
+.link:hover span{
+    background: #fff;
+    color: coral;
+    box-shadow: 0 0 15px #909090;
+}
+@media only screen and (max-width: 767px){
+    .link{ margin-bottom: 20px; }
+}

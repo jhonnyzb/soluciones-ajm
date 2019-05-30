@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { InicioInterfacesPie } from '../inicio/iniciointerfaces';
 import { InicioService } from '../inicio/inicio.service';
 
-
 @Component({
   selector: 'app-serviciosc',
   templateUrl: './serviciosc.component.html',
@@ -11,9 +10,12 @@ import { InicioService } from '../inicio/inicio.service';
 export class ServicioscComponent implements OnInit {
 
   InfoServiciosContable: Array<InicioInterfacesPie> = new Array<InicioInterfacesPie>();
+  documentac:boolean=false;
+  
+  constructor(private afs: InicioService) {
+    
 
-
-  constructor(private afs: InicioService) { }
+   }
 
   ngOnInit() {
     this.getData();
@@ -21,11 +23,18 @@ export class ServicioscComponent implements OnInit {
 
   getData() {
 
-    this.afs.getInfoPieContable().subscribe((data) => {
+     this.afs.getInfoPieContable().subscribe((data) => {
       this.InfoServiciosContable = data;
       
-    });
-
+    }); 
   }
 
+
+  pagina(){
+    this.documentac=false;
+  }
+
+  document(){
+    this.documentac=!this.documentac;
+}
 }

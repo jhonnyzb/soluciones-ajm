@@ -17,7 +17,8 @@ import { environment } from 'src/environments/environment';
     AppComponent,
     LayoutusuariosComponent,
     LayoutadminComponent,
-    IniciarsesionComponent
+    IniciarsesionComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ export class AcercadeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

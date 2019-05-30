@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { InicioInterfacesPie } from '../iniciointerfaces';
+import { InicioInterfacesPie, InicioInterfacesSection8 } from '../iniciointerfaces';
 import { InicioService } from '../inicio.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-iniciocontable',
@@ -10,6 +12,8 @@ import { InicioService } from '../inicio.service';
 export class IniciocontableComponent implements OnInit {
 
   InfoPieContable: Array<InicioInterfacesPie> = new Array<InicioInterfacesPie>();
+  /* InfoPieContable: Observable<InicioInterfacesPie[]>; */
+
   constructor(private afs: InicioService) {
   }
 
@@ -19,9 +23,14 @@ export class IniciocontableComponent implements OnInit {
   }
 
   getData() {
-    this.afs.getInfoPieContable().subscribe((data) => {
+     /*  this.InfoPieContable = this.afs.getInfoPieContable();
+      console.log(this.InfoPieContable) */
+      this.afs.getInfoPieContable().subscribe((data) => {
       this.InfoPieContable = data;
-
+    
     });
+
+  
+    
   }
 }

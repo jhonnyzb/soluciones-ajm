@@ -25,6 +25,10 @@ const routes: Routes = [
           loadChildren: './modulos/serviciosi/serviciosi.module#ServiciosiModule'
         },
         {
+          path: 'contactenos',
+          loadChildren: './modulos/contactenos/contactenos.module#ContactenosModule'
+        },
+        {
           path: '',
           redirectTo: 'inicio',
           pathMatch: 'full'

@@ -19,11 +19,14 @@ export class InicioComponent implements OnInit {
   Infosection8: InicioInterfacesSection8 = {};
   infoheader: InicioInterfacesSection2 = {};
   Infosection5_0: InicioInterfacesSection5_0 = {};
+
+
   constructor(private afs: InicioService) { }
 
 
 
   ngOnInit() {
+    
     this.getData();
   }
 
@@ -37,12 +40,10 @@ export class InicioComponent implements OnInit {
 
     this.afs.getInicioSection2('OMBJaqrat4KcJ0LlU9M2').subscribe((data) => {
       this.infoheader = data.payload.data();
-      
     });
 
     this.afs.getInicioSection4().subscribe((data) => {
       this.Infosection4 = data;
-     
     });
 
     this.afs.getInicioSection5_0('ZHv0hl7RQiKf5IC3VJvx').subscribe((data) => {

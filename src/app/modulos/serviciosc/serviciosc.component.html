@@ -14,17 +14,19 @@
   </div>
 </div>
 
+<!-- section2 -->
 <br><br>
 <div class="container">
   <div class="row">
     <div class="col-md-3">
       <div class="nav flex-column nav-pills color_ rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a *ngFor="let data of  InfoServiciosContable;let i = index" class="nav-link " data-toggle="pill"
-          href="#v-pills-{{data.palabraid}}" role="tab"
-          [ngClass]="i == 0 ? 'active' : ''">{{data.titulo | uppercase}}</a>
+          (click)="pagina()" href="#v-pills-{{data.palabraid}}" role="tab"
+          [ngClass]="i == 0 ? 'active' : ''">{{data.titulo | uppercase}}
+        </a>
       </div>
     </div>
-    <div class="col-md-7 divp"><br>
+    <div class="col-md-8 divp"><br>
       <div class="tab-content" id="v-pills-tabContent">
         <div *ngFor="let data of  InfoServiciosContable;let k = index" class="tab-pane fade"
           id="v-pills-{{data.palabraid}}" role="tabpanel" [ngClass]="k == 0 ? 'show active' : ''">
@@ -43,19 +45,22 @@
               </ul>
             </div>
           </div>
-          <hr class="style4">
-          <p class="text-justify ">{{data.descripcion}}</p>
-          <p class="text-justify">{{data.descripcion_atras}}</p>
-          <hr class="style4">
           <div>
-            <button class="btn btn-primary">Solicitar servicio</button>&nbsp;
-            <button *ngIf="data.botondocumentacion" class="btn btn-primary">Documentacion requerida</button>
+            <hr class="style4">
+            <p class="text-justify ">{{data.descripcion}}</p>
+            <p class="text-justify">{{data.descripcion_atras}}</p>
+            <hr class="style4"><br>
+          </div>
+          <div>
+            <a class="link" *ngIf="data.botondocumentacion" (click)="document()"><span>Documentacion
+                requerida</span></a>&nbsp;&nbsp;&nbsp;
+            <a class="link" routerLink='/usuarios/contactenos'><span>Contactar servicio</span></a>
+            <div *ngIf="documentac">
+              <h6>documentos</h6>
+            </div>
           </div>
         </div>
-      </div>
-
-
-
+      </div><br>
     </div>
   </div><br>
 </div>

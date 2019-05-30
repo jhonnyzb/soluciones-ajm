@@ -4,8 +4,14 @@ import { ServicioscComponent } from './serviciosc.component';
 
 const routes: Routes = [
   {
-    path: '', component:ServicioscComponent
-  }
+    path: 'servicioscontables', component:ServicioscComponent
+  },
+  {
+    path: '',
+    redirectTo: 'servicioscontables',
+    pathMatch: 'full'
+  },
+
 ];
 
 @NgModule({

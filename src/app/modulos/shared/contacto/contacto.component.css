@@ -1,0 +1,103 @@
+.contac{
+    margin-top: 5%;
+    margin-bottom: 3%
+    
+}
+h2{
+    color: rgb(0, 174, 255);
+    font-family: Agency FB;
+    margin: 0%;
+    padding: 0%
+}
+hr.style1{
+   border-top: 2px solid coral;
+   margin-right: 85%;
+   margin-top: 0%;
+   padding: 0%
+}
+hr.style2{
+    border-top: 2px solid coral;
+    margin-top:3%;
+    margin-bottom: 3%;
+
+}
+
+label{
+    font-family: Agency FB ;
+    font-size: 130%;
+    margin:0%;
+   
+}
+input{
+    background-color:rgb(240, 239, 239);
+    font-family: Agency FB;
+    border-radius: 5px;
+    border: 0px solid #39c;
+    width: 100%;
+    height: 65px;
+    padding-left: 20px;
+    color:black;
+    font-size: 120%;
+    margin-bottom: 20px;
+ 
+}
+textarea{
+    background-color:rgb(228, 227, 227);
+    border-radius: 5px;
+    border: 1px solid rgb(228, 227, 227);
+    width: 100%;
+    padding-left: 20px;
+    color:black;
+    font-size: 120%;
+    margin-bottom: 20px;
+    padding-top: 5px
+}
+textarea:focus{
+    background-color: rgb(0, 174, 255);
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+input:focus{
+ background-color: rgb(0, 174, 255);
+ -webkit-transition: all 0.8s ease;
+ -moz-transition: all 0.8s ease;
+ -ms-transition: all 0.8s ease;
+ -o-transition: all 0.8s ease;
+ transition: all 0.8s ease;
+}
+
+.btn {
+    background-color:rgb(0, 174, 255);
+    font-family: Agency FB;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+.btn:hover {
+    background-color: rgb(134, 211, 247);
+  }
+  .i_{
+      
+      color:rgb(0, 174, 255);
+      font-size: 130%
+  }
+  .idos{
+      font-family: Agency FB;
+      font-size: 120%;
+      font-weight: bold;
+      margin-bottom: 0%;
+      text-align: left;
+  }
+ span{
+     font-family: Agency FB; 
+     font-size: 130%
+ }
+ li{
+     margin-bottom: 5px
+ }
