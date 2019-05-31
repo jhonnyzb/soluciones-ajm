@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { InicioInterfacesSlider, InicioInterfacesCuerpo, InicioInterfacesSection2, InicioInterfacesSection4, InicioInterfacesSection5_1, InicioInterfacesSection5_2, InicioInterfacesSection5_0, InicioInterfacesSection8 } from './iniciointerfaces';
 import { InicioService } from './inicio.service';
-import { DeprecatedI18NPipesModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
 
@@ -22,7 +21,6 @@ export class InicioComponent implements OnInit {
 
 
   constructor(private afs: InicioService) { }
-
 
 
   ngOnInit() {

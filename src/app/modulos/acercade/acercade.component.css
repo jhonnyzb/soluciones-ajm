@@ -1,7 +1,6 @@
 
 /* section1 */
 .section .row{
-  margin-top: 4px;
   margin-bottom: 3%;
 }
 
@@ -24,7 +23,7 @@
   height: 70%;
 }
 .sec{
-  -webkit-box-shadow: inset 0px 64px 103px -49px rgb(180, 231, 255);
+-webkit-box-shadow: inset 0px 64px 103px -49px rgb(180, 231, 255);
 -moz-box-shadow: inset 0px 64px 103px -49px rgb(132, 216, 255);
 box-shadow: inset 0px 64px 103px -49px rgb(149, 222, 255);
 }

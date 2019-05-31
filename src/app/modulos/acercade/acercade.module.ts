@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AcercadeRoutingModule } from './acercade-routing.module';
 import { AcercadeComponent } from './acercade.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [AcercadeComponent],
   imports: [
     CommonModule,
+    SharedModule,
     AcercadeRoutingModule
   ]
 })

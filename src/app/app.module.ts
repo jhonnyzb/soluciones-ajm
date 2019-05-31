@@ -9,22 +9,30 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { LayoutusuariosComponent } from './layoutusuarios/layoutusuarios.component';
 import { LayoutadminComponent } from './layoutadmin/layoutadmin.component';
-import { IniciarsesionComponent } from './iniciarsesion/iniciarsesion.component';
+
 import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { SharedModule } from './modulos/shared/shared.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutusuariosComponent,
     LayoutadminComponent,
-    IniciarsesionComponent,
+    
    
   ],
   imports: [
     BrowserModule,
+    SharedModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+  
 
   ],
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }],

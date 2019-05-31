@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ServicioscRoutingModule } from './serviciosc-routing.module';
 import { ServicioscComponent } from './serviciosc.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -10,6 +11,7 @@ import { ServicioscComponent } from './serviciosc.component';
   declarations: [ServicioscComponent],
   imports: [
     CommonModule,  
+    SharedModule,
     ServicioscRoutingModule
   ]
 })
