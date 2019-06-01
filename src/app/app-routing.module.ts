@@ -33,6 +33,7 @@ const routes: Routes = [
         path: 'login',  
         loadChildren: './modulos/login/login.module#LoginModule', data: { animation: 'Login' }
       },
+      
       {
         path: '',
         redirectTo: 'inicio',

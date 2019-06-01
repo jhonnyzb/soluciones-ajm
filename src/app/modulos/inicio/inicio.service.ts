@@ -79,7 +79,12 @@ export class InicioService {
 
 
   public getInfoPieInformatica() {
-
-    return this.firestore.collection<InicioInterfacesPie>('Home_Pie_I').valueChanges();
+    return this.firestore.collection<InicioInterfacesPie>('Home_Pie_I').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as InicioInterfacesPie;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
   }
 }

@@ -224,3 +224,48 @@ box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
 @media only screen and (max-width: 767px){
     .link{ margin-bottom: 20px; }
 }
+
+	
+.imagen:hover {
+    filter: opacity(.5);
+    transition:all .5s ease-in-out;
+}
+
+.btn {
+    background-color:coral;
+    font-family: Agency FB;
+    border: none;
+    color: white;
+    padding: 2px 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+.btn:hover {
+    background-color: rgb(255, 212, 196);
+  }
+  h2{
+      font-family: Agency FB;
+      margin: 0%;
+      padding: 0%
+  }
+ hr.style5{
+    border-top: 1px solid coral;
+    margin-right: 20%;
+    margin-top: 0%;
+    padding: 0%
+ }
+
+.c0{
+    font-family: Agency FB;
+    font-weight: bold
+    
+ }
+.c0 a{
+    font-family: Agency FB;
+    font-size: 80%;
+    font-weight: normal
+}
+.c0 i{
+    margin-right: 10px
+}

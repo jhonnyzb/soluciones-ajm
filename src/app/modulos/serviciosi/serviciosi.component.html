@@ -1,4 +1,69 @@
-<p>
-  serviciosi works!
-</p>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h3>Soluciones informaticos</h3>
+      <hr class="style1"><br>
+      <hr class="style3">
+      <p>Prestamos servicios informáticos y de comunicaciones, especialmente mantenimiento informático y de redes
+        informáticas. Nos ocupamos tanto de sus servidores, ordenadores fijos y portátiles, impresoras, cableado,
+        switches, routers y en general, todo lo necesario para que su negocio no se detenga. Ofrecemos un amplio
+        catálogo de servicios informáticos: mantenimiento informático, gestión de copias de seguridad, mantenimiento de
+        redes, desarrollo software, desarrollo de aplicaciones, consultoría SEO, consultoría tienda online, formación
+        tecnológica.</p>
+      <hr class="style3">
+    </div>
+  </div>
+</div>
+
+<!-- section2 -->
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="nav flex-column nav-pills color_ rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a *ngFor="let data of  InfoServiciosInformaticos;let i = index" class="nav-link " data-toggle="pill"
+          (click)="pagina()" href="#v-pills-{{data.palabraid}}" role="tab"
+          [ngClass]="i == 0 ? 'active' : ''">{{data.titulo | uppercase}}
+        </a>
+      </div>
+    </div>
+    <div class="col-md-8 divp"><br>
+      <div class="tab-content" id="v-pills-tabContent">
+        <div *ngFor="let data of  InfoServiciosInformaticos;let k = index" class="tab-pane fade"
+          id="v-pills-{{data.palabraid}}" role="tabpanel" [ngClass]="k == 0 ? 'show active' : ''">
+          <h3 class="text-capitalize">{{data.titulo | lowercase }}</h3>
+          <hr class="style2"><br>
+          <div class="box">
+            <img [src]="data.url" alt="">
+            <div class="box-content">
+              <div class="content">
+                <h3 class="title">{{data.titulo | lowercase}}</h3>
+                <span class="post">AJM soluciones</span>
+              </div>
+              <ul class="icon">
+                <li><i class="fa fa-angellist"></i></li>
+                <li><i class="fa fa-thumbs-up"></i></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <hr class="style4">
+            <p class="text-justify ">{{data.descripcion}}</p>
+            <p class="text-justify">{{data.descripcion_atras}}</p>
+            <hr class="style4"><br>
+          </div>
+          <div>
+            <a class="link" *ngIf="data.botondocumentacion" (click)="document()"><span>Documentacion
+                requerida</span></a>&nbsp;&nbsp;&nbsp;
+            <a class="link" routerLink='/usuarios/contactenos'><span>Contactar servicio</span></a>
+            <div *ngIf="documentac">
+              <h6>documentos</h6>
+            </div>
+          </div>
+        </div>
+      </div><br>
+    </div>
+  </div><br>
+</div>
 <app-footer></app-footer>

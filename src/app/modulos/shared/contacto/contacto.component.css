@@ -82,12 +82,12 @@ input:focus{
 .btn:hover {
     background-color: rgb(134, 211, 247);
   }
-  .i_{
+.i_{
       
       color:rgb(0, 174, 255);
       font-size: 130%
   }
-  .idos{
+.idos{
       font-family: Agency FB;
       font-size: 120%;
       font-weight: bold;
@@ -101,4 +101,3 @@ input:focus{
  li{
      margin-bottom: 5px
  }
-

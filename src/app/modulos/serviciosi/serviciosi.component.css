@@ -1,0 +1,226 @@
+.color_{
+    border: 1px solid rgb(205, 206, 206);
+    
+}
+.nav-pills .nav-link.active {
+    background-color:rgb(0, 174, 255);
+    text-align: center;
+}
+
+.col-md-3 a{
+   color:white;
+  
+   margin-bottom: 2%;
+    
+}
+.col-md-3 div{
+    background-color:#343a40;
+}
+
+.col-md-10 p{
+    font-size: 120%;
+    font-style: italic
+}
+
+hr.style1{
+    border-top: 5px solid rgb(0, 174, 255);
+    margin-right: 85%;
+    margin-top: 0%
+}
+hr.style2{
+    border-top: 3px solid coral;
+    margin-right: 85%;
+    margin-top: 0%
+}
+hr.style3{
+    border-top: 1px solid #8c8b8b;
+}
+hr.style4{
+    border-top: 1px solid coral;
+    margin-right: 80%;
+    margin-top: 5%
+}
+.tab-pane p{
+    font-size: 130%;
+    margin-top: 3%
+}
+button{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.divp{
+
+-webkit-box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
+-moz-box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
+box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
+}
+
+.box{
+    font-family: 'KoHo', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+.box:before,
+.box:after{
+    content: '';
+    background: repeating-linear-gradient(90deg,rgba(0,0,0,0.7), transparent 8%,
+                transparent 10%, rgba(0,0,0,0.7) 17%);
+    height: 50%;
+    width: 100%;
+    opacity: 0;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 0.25s ease-in-out;
+}
+.box:after{
+    transform: rotate(-90deg);
+    transform-origin: top right;
+    top: auto;
+    bottom: 0;
+}
+.box:hover:before,
+.box:hover:after{
+    opacity: 1;
+    transform: rotate(0);
+}
+.box img{
+    width: 100%;
+    height: auto;
+    transition: all .5s ease-out;
+}
+.box:hover img{ filter: hue-rotate(10deg) blur(2px); }
+.box .box-content{
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
+.box .content{
+    color: #fff;
+    text-align: right;
+    opacity: 0;
+    position: absolute;
+    right: -50%;
+    bottom: 10px;
+    z-index: 2;
+    transition: all 0.3s ease 0.1s;
+}
+.box:hover .content{
+    right: 15px;
+    opacity: 1;
+}
+.box .title{
+   
+    font-size: 23px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px coral;
+    margin: 0 0 5px;
+}
+.box .post{
+    background-color: coral;
+    font-size:16px;
+    font-weight: 600;
+    padding: 2px 7px;
+    margin: 0 0 7px;
+    border-radius: 10px 0;
+}
+.box .icon{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    z-index: 2;
+    transition: all 0.3s ease 0.3s;
+}
+.box .icon li{
+    margin: 0 0 10px;
+    opacity: 0;
+    transform: rotate(360deg);
+    transition: all 0.3s;
+}
+.box:hover .icon li{
+    opacity: 1;
+    transform: rotate(0);
+}
+.box .icon li i{
+    color: coral;
+    background: #fff;
+    font-size: 19px;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    border-radius:15px 0;
+    display: block;
+    transition:all 0.3s ease 0s;
+}
+.box .icon li i:hover{
+    color: coral;
+    box-shadow: 0 0 15px rgb(0, 174, 255) inset;
+}
+@media only screen and (max-width:990px){
+    .box{ margin-bottom: 30px; }
+}
+@media only screen and (max-width:479px){
+    .box .title{ font-size: 20px; }
+}
+
+
+
+.link{
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+}
+.link:before,
+.link:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 5px solid coral;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0s;
+}
+.link:after{ background:  rgb(0, 174, 255); }
+.link:hover:before{
+    top: -7px;
+    left: -7px;
+}
+.link:hover:after{
+    top: 7px;
+    left: 7px;
+}
+.link span{
+    display: block;
+    padding: 7px 15px;
+    background:  rgb(0, 174, 255);
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 2;
+    transition: all 0.3s ease 0s;
+}
+.link:hover span{
+    background: #fff;
+    color: coral;
+    box-shadow: 0 0 15px #909090;
+}
+@media only screen and (max-width: 767px){
+    .link{ margin-bottom: 20px; }
+}

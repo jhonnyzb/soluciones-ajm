@@ -63,6 +63,29 @@
       </div><br>
     </div>
   </div><br>
+</div><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Noticias destacadas</h2>
+      <hr class="style5">
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let data of  InfoNoticiasContables" >
+      <div class="card bg-light">
+        <img class="card-img-top imagen"
+        [src]="data.url"
+          alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title border-bottom pb-3 c0">{{data.titulo}}
+            <a class="float-right d-inline-flex share "><i class="fa fa-calendar"></i>{{data.fecha}}</a></h5>
+          <p class="card-text">{{data.texto | slice :0 :100}}.......</p>
+          <button class="btn float-right">Leer mas&nbsp;<i class="fa fa-angle-double-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
+<br><br>
 <app-footer></app-footer>
