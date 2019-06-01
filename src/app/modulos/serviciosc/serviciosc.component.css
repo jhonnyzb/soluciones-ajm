@@ -1,3 +1,4 @@
+
 .color_{
     border: 1px solid rgb(205, 206, 206);
     
@@ -257,15 +258,15 @@ box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
  }
 
 .c0{
-    font-family: Agency FB;
-    font-weight: bold
-    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 105%    
  }
 .c0 a{
-    font-family: Agency FB;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 80%;
-    font-weight: normal
+    font-weight: normal;
 }
 .c0 i{
-    margin-right: 10px
+    margin-right: 5px
 }
