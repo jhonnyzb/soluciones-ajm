@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InicioInterfacesPie } from '../inicio/iniciointerfaces';
 import { InicioService } from '../inicio/inicio.service';
-import { Noticiasc } from './noticiascinterface';
+import { Noticias } from './noticiascinterface';
 import { NoticiascService } from './noticiasc.service';
 import { Subscription } from 'rxjs';
 
@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 export class ServicioscComponent implements OnInit, OnDestroy {
 
   InfoServiciosContable: Array<InicioInterfacesPie> = new Array<InicioInterfacesPie>();
-  InfoNoticiasContables: Array<Noticiasc> = new Array<Noticiasc>();
+  InfoNoticiasContables: Array<Noticias> = new Array<Noticias>();
   InfoServContablesSubscription: Subscription;
 
   documentac:boolean=false;
@@ -37,8 +37,8 @@ export class ServicioscComponent implements OnInit, OnDestroy {
 
     this.notcontables.getNoticiasContables().subscribe((data) => {
       this.InfoNoticiasContables = data;
-      console.log(this.InfoNoticiasContables) 
     }); 
+
 
 
 

@@ -33,6 +33,10 @@ const routes: Routes = [
         path: 'login',  
         loadChildren: './modulos/login/login.module#LoginModule', data: { animation: 'Login' }
       },
+      {
+        path: 'noticiassingle/:parametroid/:idpagina',  
+        loadChildren: './modulos/noticiassingle/noticiassingle.module#NoticiassingleModule', data: { animation: 'NoticiasSingle' }
+      },
       
       {
         path: '',
