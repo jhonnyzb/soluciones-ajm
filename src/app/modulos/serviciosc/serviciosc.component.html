@@ -82,8 +82,8 @@
         <div class="card-body">
           <h5 class="card-title border-bottom pb-3 c0">{{data.titulo}}
             <a class="float-right d-inline-flex share "><i class="fa fa-calendar"></i>{{data.fecha}}</a></h5>
-          <p class="card-text">{{data.texto | slice :0 :100}}.......</p>
-          <button class="btn float-right">Leer mas&nbsp;<i class="fa fa-angle-double-right"></i></button>
+          <p class="card-text">{{data.texto1 | slice :0 :100}}.......</p>
+          <button class="btn float-right" [routerLink]="['/usuarios/noticiassingle', data.id, 1]" >Leer mas&nbsp;<i class="fa fa-angle-double-right"></i></button>
         </div>
       </div>
     </div>
