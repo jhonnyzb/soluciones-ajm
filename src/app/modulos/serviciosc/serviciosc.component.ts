@@ -37,7 +37,6 @@ export class ServicioscComponent implements OnInit, OnDestroy {
 
     this.notcontables.getNoticiasContables().subscribe((data) => {
       this.InfoNoticiasContables = data;
-      console.log(this.InfoNoticiasContables) 
     }); 
 
 
