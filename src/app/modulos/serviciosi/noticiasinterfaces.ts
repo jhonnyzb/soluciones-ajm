@@ -1,4 +1,4 @@
-export interface Noticias {
+export interface Noticiasi {
     titulo?: string;
     fecha?: string;
     texto1?: string;

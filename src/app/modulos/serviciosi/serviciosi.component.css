@@ -224,3 +224,52 @@ box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
 @media only screen and (max-width: 767px){
     .link{ margin-bottom: 20px; }
 }
+
+.imagen{
+    height: 200px;
+}
+.imagen:hover {
+    filter: opacity(.5);
+    transition:all .5s ease-in-out;
+}
+
+.btn {
+    background-color:coral;
+    font-family: Agency FB;
+    border: none;
+    color: white;
+    padding: 2px 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+.btn:hover {
+    background-color: rgb(250, 183, 159);
+  }
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0%;
+    padding: 0%
+}
+
+hr.style5{
+    border-top: 1px solid coral;
+    margin-right: 20%;
+    margin-top: 0%;
+    padding: 0%
+ }
+
+.c0{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 105%    
+ }
+.c0 a{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 80%;
+    font-weight: normal;
+}
+.c0 i{
+    margin-right: 5px
+}

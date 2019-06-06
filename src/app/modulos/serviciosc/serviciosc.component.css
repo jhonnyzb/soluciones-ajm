@@ -226,6 +226,9 @@ box-shadow: 33px 0px 94px -12px rgba(189,185,189,1);
     .link{ margin-bottom: 20px; }
 }
 
+.imagen{
+    height: 200px;
+}
 	
 .imagen:hover {
     filter: opacity(.5);

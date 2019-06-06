@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Noticias } from '../serviciosc/noticiascinterface';
+import { NoticiassingleService } from './noticiassingle.service';
+
 
 @Component({
   selector: 'app-noticiassingle',
@@ -9,44 +12,62 @@ import { Subscription } from 'rxjs';
 })
 export class NoticiassingleComponent implements OnInit, OnDestroy {
 
-  prueba: string = "dfd";
-  url1: string = "";
-  url2: string = "";
-  ParametrosSubscription: Subscription;
-
+  RutasSubscription: Subscription;
+  NoticiasCSubscription: Subscription;
+  fuente:boolean=true;
+  noticias: Noticias = {};
   idnoticia: string = "";
   idpagina: number = null;
 
-  constructor(private routeActive: ActivatedRoute) { }
+  constructor(private routeActive: ActivatedRoute, private afs: NoticiassingleService) { }
 
   ngOnInit() {
 
-    this.ParametrosSubscription = this.routeActive.params.subscribe(
+    this.RutasSubscription = this.routeActive.params.subscribe(
       (params: Params) => {
         this.idnoticia = params.parametroid;
         this.idpagina = params.idpagina;
       }
     );
 
-    if (this.idpagina == 1) {
-      this.ObtenerNoticiaC(this.idnoticia)
-    } else if (this.idpagina == 2) {
-      this.ObtenerNoticiaI(this.idnoticia)
-    }else{
-      console.log("no hay pagina")
+    this.obternerNoticia(this.idpagina, this.idnoticia);
+   
+  }
+
+  obternerNoticia(id_: number, idnoticia: string) {
+
+    if (id_ == 1) {
+      this.NoticiasCSubscription = this.afs.getNoticiasContables(idnoticia).subscribe((data) => {
+        this.noticias = data.payload.data();
+      });
+    }
+    else if (id_ == 2) {
+      this.NoticiasCSubscription = this.afs.getNoticiasInformaticas(idnoticia).subscribe((data) => {
+        this.noticias = data.payload.data();
+        this.fuente=false;
+      });
+    } else {
+      console.log("No hay pagina")
     }
 
   }
 
-  ObtenerNoticiaC(id_: string) {
-    console.log(id_)
-  }
+
+  // ObtenerNoticiaC(id_: string) {
+  //   this.afs.getNoticiasContables(id_).subscribe((data) => {
+  //     this.noticias = data.payload.data();
+  //     console.log(this.noticias)
+  //   });
+
+
+  // }
   ObtenerNoticiaI(id_: string) {
     console.log(id_)
   }
 
   ngOnDestroy() {
-    this.ParametrosSubscription.unsubscribe();
+    this.RutasSubscription.unsubscribe();
+    this.NoticiasCSubscription.unsubscribe();
   }
 
 }
