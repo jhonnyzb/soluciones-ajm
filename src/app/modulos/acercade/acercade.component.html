@@ -4,14 +4,14 @@
         <div class="row">
             <div class="col-md-5">
                 <h1>
-                    SER NORMALES NOS HACE DIFERENTES
+                    {{infosection1.parrafo1}}
                 </h1>
                 <p>
-                    AJM SOLUCIONES ES MUCHO MÁS, CONÓCENOS
+                    {{infosection1.parrafo2}}
                 </p>
             </div>
             <div class="col-md-7">
-                <img src="https://preview.ibb.co/erdq8p/Employee-1.jpg" alt="" />
+                <img src="{{infosection1.url}}" alt="" />
             </div>
         </div>
     </div>
@@ -43,65 +43,42 @@
     <div class="row">
         <div class="col-md-6">
             <hr class="style3">
-            <h2>SOMOS PERSONAS</h2>
-            <p>Nos gustan las cosas claras, la honestidad y la sencillez. Vamos siempre directos al grano y tenemos los
-                pies en la tierra. Somos auténticos. Ser normales nos hace diferentes. </p>
-            <p>Los que ya nos conocen dicen, además, que somos grandes profesionales. Pero eso, lo sentimos, preferimos
-                que lo leas y descubras tú. </p>
+            <h2>{{infosection3.titulo}}</h2>
+            <p>{{infosection3.parrafo1}}</p>
+            <p>{{infosection3.parrafo2}} </p>
         </div>
         <div class="col-md-6"><br><br>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators"
+                        *ngFor="let indicador of Infosection3Slider;let i = index" style="background-color:black"
+                        [attr.data-slide-to]="i" [ngClass]="i == 0 ? 'active' : ''">
+                    </li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item " *ngFor="let contenido of Infosection3Slider; let k = index"
+                        [ngClass]="k == 0 ? 'item active' : 'item'">
                         <div class="sec slides3">
-                            <p>Contamos con ajm para poner al dia nuestra web. Todo muy fluido.</p>
-                            <b>Gran empatia y avanzando desde el primer dia. entendieron nuestro modelo de negocion y el
-                                tipo de web que necesitabamos</b><br>
-                            <p>Gracias chicos, nos lo habéis puesto muy fácil.</p>
+                            <p>{{contenido.parrafo1}}</p>
+                            <b>{{contenido.parrafo2}}</b><br>
+                            <p>{{contenido.parrafo3}}</p>
                         </div><br>
                         <div class="paddin1">
-                            <h6 style="color:coral">Manuel Diaz</h6>
-                            <h6 style="margin:-2.5% 0;">www.google.com.co</h6>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="sec slides3">
-                            <p>Contamos con ajm para poner al dia nuestra web. Todo muy fluido.</p>
-                            <b>Gran empatia y avanzando desde el primer dia. entendieron nuestro modelo de negocion y el
-                                tipo de web que necesitabamos</b><br>
-                            <p>Gracias chicos, nos lo habéis puesto muy fácil.</p>
-                        </div><br>
-                        <div class="paddin1">
-                            <h6 style="color:coral">Manuel Diaz</h6>
-                            <h6 style="margin:-2.5% 0;">www.google.com.co</h6>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="sec slides3">
-                            <p>Contamos con ajm para poner al dia nuestra web. Todo muy fluido.</p>
-                            <b>Gran empatia y avanzando desde el primer dia. entendieron nuestro modelo de negocion y el
-                                tipo de web que necesitabamos</b><br>
-                            <p>Gracias chicos, nos lo habéis puesto muy fácil.</p>
-                        </div><br>
-                        <div class="paddin1">
-                            <h6 style="color:coral">Manuel Diaz</h6>
-                            <h6 style="margin:-2.5% 0;">www.google.com.co</h6>
+                            <h6 style="color:coral">{{contenido.nombre}}</h6>
+                            <h6 style="margin:-2.5% 0;">{{contenido.web}}</h6>
                         </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev " href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" style="background-color: rgb(181, 182, 180)" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon" style="background-color: rgb(181, 182, 180)"
+                        aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next " href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" style="background-color: rgb(181, 182, 180)" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next " href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" style="background-color: rgb(181, 182, 180)"
+                        aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
-                  </a>
+                </a>
             </div>
         </div>
     </div>
@@ -326,11 +303,12 @@
             <hr class="style5">
             <p class="p2">Cuéntanos, estamos deseando darle forma a tu idea</p>
             <div class="divs7">
-                    <a routerLink='/usuarios/contactenos'>PIDENOS PRESUPUESTO PARA TU PROYECTO&nbsp; <span class="fa fa-bell"></span></a>
+                <a routerLink='/usuarios/contactenos'>PIDENOS PRESUPUESTO PARA TU PROYECTO&nbsp; <span
+                        class="fa fa-bell"></span></a>
             </div><br>
-        <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
     </div>
-</div>
 </div>
 <br>
 
