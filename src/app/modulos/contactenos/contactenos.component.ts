@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ContactenosComponent implements OnInit {
 
 
-  
   constructor() { }
 
   ngOnInit() {
