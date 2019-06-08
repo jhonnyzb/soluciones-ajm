@@ -88,45 +88,18 @@
 <div class="container">
     <div class="section4">
         <div>
-            <b>SOMOS MUCHAS COSAS,</b><br><br>
+            <b>{{infosection4.parrafo1}}</b><br><br>
         </div>
-        <p>PERO SOBRE TODO..</p>
-        <p class="psection4"> SOMOS UN EQUIPO</p>
+        <p>{{infosection4.parrafo2}}</p>
+        <p class="psection4"> {{infosection4.parrafo3}}</p>
     </div>
     <div class="row">
-        <div class="col-md-4 col-sm-6">
+        <div class="col-md-4 col-sm-6"  *ngFor="let miembro of Infosection4Equipo" style="margin-top: 10px" >
             <div class="box">
-                <img src="https://i.pinimg.com/originals/ca/ff/ff/caffff80e9b3e15293780fe00e30721e.jpg" alt="">
+                <img src="{{miembro.url}}" alt="">
                 <div class="box-content">
-                    <h3 class="title">Mirella Prieto</h3>
-                    <span class="post">Contadora Publica</span>
-                    <ul class="icon">
-                        <li><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="box">
-                <img src="https://www.inacap.cl/tportal/portales/tp5e128a166i290/uploadImg/Image/Gonzalo-Vargas-Otte-interior.jpg"
-                    alt="">
-                <div class="box-content">
-                    <h3 class="title">Jhon Zabala</h3>
-                    <span class="post">Desarrolladro Web</span>
-                    <ul class="icon">
-                        <li><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li><a href="#"><i class="fa fa-link"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="box">
-                <img src="https://i.pinimg.com/originals/bb/b9/3a/bbb93a13948dc2d306aec5c1ee4910ac.jpg" alt="">
-                <div class="box-content">
-                    <h3 class="title">Angie Prieto</h3>
-                    <span class="post">Asistente</span>
+                    <h3 class="title">{{miembro.nombre}}</h3>
+                    <span class="post">{{miembro.profesion}}</span>
                     <ul class="icon">
                         <li><a href="#"><i class="fa fa-search"></i></a></li>
                         <li><a href="#"><i class="fa fa-link"></i></a></li>
@@ -145,26 +118,25 @@
     <div class="row">
         <div class="col-md-8 text-center">
             <hr class="style4">
-            <h3>TRANQUILO, SOMOS SERIOS.</h3>
-            <p>Trabajamos duro y nos tomamos muy en serio tu negocio, porque sabemos que cuando contratas a una empresa
-                esto es lo único que te importa.</p>
-            <p>Ojo, esto no significa que seamos sosos o aburridos. De hecho, quienes leen <a href="#">nuestro blog</a>
+            <h3>{{infosection5.titulo}}</h3>
+            <p>{{infosection5.parrafo1}}</p>
+            <p>{{infosection5.parrafo2}} <a href="#">nuestro blog</a>
                 dicen que se divierten mucho. Pero cada cosa a su tiempo. </p>
-            <p>Cuando trabajamos en un proyecto somos profesionales y muy responsables.</p><br>
+            <p>{{infosection5.parrafo3}}</p><br>
             <div class="row">
                 <div class="col-md-4 img-center1">
-                    <img src="https://www.ensalza.com/wp-content/uploads/ensalza-agente-oficial-confianza-online.png"
+                    <img src="{{infosection5.url}}"
                         alt="">
                 </div>
                 <div class="col-md-4 img-center2">
-                    <img src="https://www.ensalza.com/wp-content/uploads/elementor/thumbs/ensalza-google-partner-adwords-nnu5lc8z3xhnyuqbjb24474u3a9chu8n18iauvqww0.png"
+                    <img src="{{infosection5.url1}}"
                         alt="">
                 </div>
             </div>
         </div>
-        <div class="col-md-4 ">
+        <div class="col-md-4">
             <img class="img-center3"
-                src="http://1.bp.blogspot.com/-4q7gM4zxWM0/UqMoump87gI/AAAAAAAAAG4/tnBLu-chVfE/s1600/Imagen5.png"
+                src="{{infosection5.url2}}"
                 alt="">
         </div>
     </div>
@@ -176,134 +148,35 @@
 <div class="container">
     <div class="row ">
         <div class="col-md-12 text-center">
-            <h1>#AJMSOLUCIONES</h1>
-            <p>y nuestra instalaciones se encuentran a su servicio visitanos...</p>
+            <h1>{{infosection6.parrafo1}}</h1>
+            <p>{{infosection6.parrafo2}}</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate" *ngFor="let instalacion of Infosection6Instalaciones" >
             <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/full-img3.jpg" alt="">
+                <img class="img-responsive" src="{{instalacion.url}}" alt="">
                 <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-1.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-2.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-3.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/iphone-img.png" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-2.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/full-img3.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-1.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-2.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-3.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-1.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 separate">
-            <div class="hovereffect">
-                <img class="img-responsive" src="../../../assets/img/big-2.jpg" alt="">
-                <div class="overlay">
-                    <h2>Ajm soluciones</h2>
-                    <a class="info" href="#">Saber mas</a>
+                    <h2>{{instalacion.titulo}}</h2>
+                    <a class="info" href="#">{{instalacion.bsabermas}}</a>
                 </div>
             </div>
         </div>
     </div>
 
 </div><br><br>
-
+<hr class="style2 ">
+<hr class="style1">
 <!-- section7 -->
 
 <div class="container">
     <div class="row background ">
         <div class="col-md-8">
-            <p>Ahora que ya nos conoces ¿qué te parece si hablamos de tu proyecto?</p>
+            <p>{{infosection7.parrafo1}}</p>
             <hr class="style5">
-            <p class="p2">Cuéntanos, estamos deseando darle forma a tu idea</p>
+            <p class="p2">{{infosection7.parrafo2}}</p>
             <div class="divs7">
-                <a routerLink='/usuarios/contactenos'>PIDENOS PRESUPUESTO PARA TU PROYECTO&nbsp; <span
+                <a routerLink='/usuarios/contactenos'>{{infosection7.parrafo3}}&nbsp; <span
                         class="fa fa-bell"></span></a>
             </div><br>
             <div class="col-md-4"></div>

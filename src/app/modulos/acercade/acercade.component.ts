@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AcercadeService } from './acercade.service';
-import { AcercadeSection1, AcercadeSection2, AcercadeInfoSection3, AcercadeInfoSection3Slider } from './acercadeinterfaces';
+import { AcercadeSection1, AcercadeSection2, AcercadeInfoSection3, AcercadeInfoSection3Slider, AcercadeInfoSection4, AcercadeInfoSection4Equipo, AcercadeInfoSection5, AcercadeInfoSection6, AcercadeInfoSection6Instalaciones, AcercadeInfoSection7 } from './acercadeinterfaces';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -19,6 +19,21 @@ export class AcercadeComponent implements OnInit, OnDestroy {
   infosection3Suscription: Subscription;
   Infosection3Slider: Array<AcercadeInfoSection3Slider> = new Array<AcercadeInfoSection3Slider>();
   Infosection3SliderSuscription: Subscription;
+  infosection4: AcercadeInfoSection4 = {};
+  infosection4Suscription: Subscription;
+  Infosection4Equipo: Array<AcercadeInfoSection4Equipo> = new Array<AcercadeInfoSection4Equipo>();
+  Infosection4EquipoSuscription: Subscription;
+  infosection5: AcercadeInfoSection5 = {};
+  infosection5Suscription: Subscription;
+  infosection6: AcercadeInfoSection6 = {};
+  infosection6Suscription: Subscription;
+  Infosection6Instalaciones: Array<AcercadeInfoSection6Instalaciones> = new Array<AcercadeInfoSection6Instalaciones>();
+  Infosection6InstalacionesSuscription: Subscription;
+  infosection7: AcercadeInfoSection7 = {};
+  infosection7Suscription: Subscription;
+
+
+
 
   constructor(private afs: AcercadeService) { }
 
@@ -51,7 +66,35 @@ export class AcercadeComponent implements OnInit, OnDestroy {
 
     });
 
+    this.infosection4Suscription = this.afs.getInfoacercadeSection4('fDSpjKuTJtSVGIaWALgx').subscribe((data) => {
+      this.infosection4 = data.payload.data();
 
+    });
+
+    this.Infosection4EquipoSuscription = this.afs.getInfoacercadeSection4Equipo('sPOCUlYUrGBw231trtZY').subscribe((data)=>{
+      this.Infosection4Equipo= data;
+    });
+
+    this.infosection5Suscription = this.afs.getInfoacercadeSection5('MIpfPXe4KaW1ZNdP6inO').subscribe((data) => {
+      this.infosection5 = data.payload.data();
+
+    });
+
+
+    this.infosection6Suscription = this.afs.getInfoacercadeSection6('IL0zZbeVaYuAHxxJyJdN').subscribe((data) => {
+      this.infosection6 = data.payload.data();
+
+    });
+
+    this.Infosection6InstalacionesSuscription = this.afs.getInfoacercadeSection6Instalaciones('aurhqyugH2DdanlzmMiy').subscribe((data)=>{
+      this.Infosection6Instalaciones= data;
+    })
+
+
+    this.infosection7Suscription = this.afs.getInfoacercadeSection7('7JbDVhb0UznlnMYVTIXh').subscribe((data) => {
+      this.infosection7 = data.payload.data();
+
+    });
 
   }
 
@@ -61,5 +104,11 @@ export class AcercadeComponent implements OnInit, OnDestroy {
     this.infosection2Suscription.unsubscribe();
     this.infosection3Suscription.unsubscribe();
     this.Infosection3SliderSuscription.unsubscribe();
+    this.infosection4Suscription.unsubscribe();
+    this.Infosection4EquipoSuscription.unsubscribe();
+    this.infosection5Suscription.unsubscribe();
+    this.infosection6Suscription.unsubscribe();
+    this.Infosection6InstalacionesSuscription.unsubscribe();
+    this.infosection7Suscription.unsubscribe();
   }
 }

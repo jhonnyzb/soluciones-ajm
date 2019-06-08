@@ -26,3 +26,47 @@ export interface AcercadeInfoSection3Slider {
     web?:string;
 
 }
+
+export interface AcercadeInfoSection4 {
+    parrafo1?:string;
+    parrafo2?:string;
+    parrafo3?:string;
+
+}
+
+export interface AcercadeInfoSection4Equipo {
+    nombre?:string;
+    profesion?:string;
+    url?:string;
+
+}
+
+export interface AcercadeInfoSection5{
+    parrafo1?:string;
+    parrafo2?:string;
+    parrafo3?:string;
+    titulo?:string;
+    url?:string;
+    url1?:string;
+    url2?:string;
+}
+
+export interface AcercadeInfoSection6 {
+    parrafo1?:string;
+    parrafo2?:string;
+
+}
+
+export interface AcercadeInfoSection6Instalaciones {
+    nombre?:string;
+    profesion?:string;
+    url?:string;
+
+}
+export interface AcercadeInfoSection7 {
+    parrafo1?:string;
+    parrafo2?:string;
+    parrafo3?:string;
+
+}
+
