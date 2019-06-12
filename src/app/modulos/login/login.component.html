@@ -5,21 +5,24 @@
         <div class="card_login">
           <div class="card">
             <div class="card-body text-center">
-              <form (ngSubmit)="onLogin()">
-                <h1 class="h3 mb-3 font-weight-normal" >Login</h1>
-                <div class="alert alert-danger" role="alert">
-                  Something is wrong!
+              <form [formGroup]="formulario" (ngSubmit)="onLogin(formulario)">
+                <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+                <div class="form-group" style="text-align: left">
+                  <input type="email" formControlName="mail" id="email" name="email" class="form-control"
+                    placeholder="Email">
+                  <h6 style="color: red">{{getError('mail')}}</h6>
                 </div>
-                <div class="form-group">
-                  <input [(ngModel)]="email" type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                <div class="form-group" style="text-align: left" >
+                  <input type="password" formControlName="password" id="password" name="password" class="form-control"
+                    placeholder="Password">
+                    <h6 style="color: red">{{getError('password')}}</h6>
                 </div>
-                <div class="form-group">
-                  <input [(ngModel)]="password" type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                </div>
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+          
+                <button type="submit" [disabled]="formulario.invalid" class="btn btn-info">Login</button>
                 <div class="form-group">
                   <a routerLink="/user/register" class="form-control login-user">Are you new ?</a>
                 </div>
+
                 <div class="form-group">
                   <button class="btn btn-block btn-social btn-facebook" (click)="onLoginFacebook()">
                     <span class="fa fa-facebook"></span>
@@ -39,4 +42,7 @@
   </div>
 </section>
 
-  <app-footer></app-footer>
+<app-footer></app-footer>
+
+<!-- [(ngModel)]="email"
+  [(ngModel)]="password" -->
