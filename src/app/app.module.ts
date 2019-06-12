@@ -11,7 +11,7 @@ import { LayoutadminComponent } from './layoutadmin/layoutadmin.component';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modulos/shared/shared.module';
-
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -19,12 +19,11 @@ import { SharedModule } from './modulos/shared/shared.module';
     AppComponent,
     LayoutusuariosComponent,
     LayoutadminComponent,
-    
-   
   ],
   imports: [
     BrowserModule,
     SharedModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireAuthModule,
