@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutusuariosComponent } from './layoutusuarios/layoutusuarios.component';
+import { LayoutadminComponent } from './layoutadmin/layoutadmin.component';
 
 
 
@@ -30,14 +31,14 @@ const routes: Routes = [
         loadChildren: './modulos/contactenos/contactenos.module#ContactenosModule', data: { animation: 'Contactenos' }
       },
       {
-        path: 'login',  
+        path: 'login',
         loadChildren: './modulos/login/login.module#LoginModule', data: { animation: 'Login' }
       },
       {
-        path: 'noticiassingle/:parametroid/:idpagina',  
+        path: 'noticiassingle/:parametroid/:idpagina',
         loadChildren: './modulos/noticiassingle/noticiassingle.module#NoticiassingleModule', data: { animation: 'NoticiasSingle' }
       },
-      
+
       {
         path: '',
         redirectTo: 'inicio',
@@ -45,7 +46,10 @@ const routes: Routes = [
       },
     ]
   },
- 
+  {
+    path: 'admin', component: LayoutadminComponent
+  },
+
   {
     path: '',
     redirectTo: 'usuarios',
