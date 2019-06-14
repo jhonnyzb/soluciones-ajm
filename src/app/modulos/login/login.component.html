@@ -1,48 +1,61 @@
-<section id="login" class="mb-5 mt-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="card_login">
-          <div class="card">
-            <div class="card-body text-center">
-              <form [formGroup]="formulario" (ngSubmit)="onLogin(formulario)">
-                <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-                <div class="form-group" style="text-align: left">
-                  <input type="email" formControlName="mail" id="email" name="email" class="form-control"
-                    placeholder="Email">
-                  <h6 style="color: red">{{getError('mail')}}</h6>
-                </div>
-                <div class="form-group" style="text-align: left" >
-                  <input type="password" formControlName="password" id="password" name="password" class="form-control"
-                    placeholder="Password">
-                    <h6 style="color: red">{{getError('password')}}</h6>
-                </div>
-          
-                <button type="submit" [disabled]="formulario.invalid" class="btn btn-info">Login</button>
-                <div class="form-group">
-                  <a routerLink="/user/register" class="form-control login-user">Are you new ?</a>
-                </div>
+<br>
+<div class="container">
+  <div class="card card-container">
 
-                <div class="form-group">
-                  <button class="btn btn-block btn-social btn-facebook" (click)="onLoginFacebook()">
-                    <span class="fa fa-facebook"></span>
-                    FACEBOOK
-                  </button>
-                  <button class="btn btn-block btn-social btn-google" (click)="onLoginGoogle()">
-                    <span class="fa fa-google"></span>
-                    GOOGLE
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p class="profile-name-card">ADMINISTRADOR</p><br>
+    <form class="form-signin" [formGroup]="formulario" (ngSubmit)="onLogin(formulario)">
+
+      <input type="email" formControlName="mail" class="form-control" placeholder="Correo electronico">
+      <span class="reauth-email">{{getError('mail')}}</span>
+      <input type="password" formControlName="password" class="form-control" placeholder="Password">
+      <span class="reauth-email">{{getError('password')}}</span>
+      <div id="remember" class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordar contraseña
+        </label>
       </div>
+      <button class="btn btn-lg btn-primary btn-block btn-signin" [disabled]="formulario.invalid" type="submit">INICIAR
+        SESION</button>
+    </form><!-- /form -->
+    <p>
+      Olvido su contraseña? Click
+      <a href="#" class="forgot-password" data-toggle="modal" data-target="#exampleModalCenter">
+        Aquí
+      </a>
+
+    </p>
+  </div><!-- /card-container -->
+</div><!-- /container -->
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: coral">Recuperar Contraseña</h5>
+        <button (click)="clear(formularioReset)" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formularioReset" (ngSubmit)="resetPassword(formularioReset)">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Le enviaremos un link a su correo para recuperar la
+              contraseña</label>
+            <input type="text" class="form-control" formControlName="mailReset" placeholder="Ingrese correo">
+            <span class="reauth-email">{{getErrorReset('mailReset')}}</span>
+          </div>
+          <div class="modal-footer">
+            <button   (click)="clear(formularioReset)"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
+            <button  type="submit" class="btn btn-primary" [disabled]="formularioReset.invalid">Enviar</button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </div>
-</section>
+</div>
 
 <app-footer></app-footer>
-
-<!-- [(ngModel)]="email"
-  [(ngModel)]="password" -->
