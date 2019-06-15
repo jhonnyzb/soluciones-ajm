@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,7 @@ export class LoginService {
 
     return new Promise((resolve, reject) => {
       this.afsAuth.auth.signInWithEmailAndPassword(email, pass)
-        .then(userData => resolve(userData),
-        
+        .then(userData => resolve(userData),        
         err => reject(err));
     });
   }
@@ -33,7 +33,10 @@ export class LoginService {
 
   }
 
-
+getDataUser()
+{
+   return this.afsAuth.authState.pipe(map(auth => auth));
+}
 
 
 }

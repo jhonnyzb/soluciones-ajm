@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutusuariosComponent } from './layoutusuarios/layoutusuarios.component';
 import { LayoutadminComponent } from './layoutadmin/layoutadmin.component';
+import { DashboardGuard } from './guards/dashboard.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 
 
@@ -27,7 +29,7 @@ const routes: Routes = [
         loadChildren: './modulos/serviciosi/serviciosi.module#ServiciosiModule', data: { animation: 'Serviciosi' }
       },
       {
-        path: 'contactenos',
+        path: 'contactenos', 
         loadChildren: './modulos/contactenos/contactenos.module#ContactenosModule', data: { animation: 'Contactenos' }
       },
       {
@@ -47,7 +49,18 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'admin', component: LayoutadminComponent
+    path: 'admin', component: LayoutadminComponent,  canActivate: [AdminGuard],  canActivateChild: [DashboardGuard],
+    children:[
+      {
+        path: 'Minicio',
+        loadChildren: './modulosAdmin/man-inicio/man-inicio.module#ManInicioModule'       
+      },
+      {
+        path: '',
+        redirectTo: 'Minicio',
+        pathMatch: 'full'
+      },
+    ]
   },
 
   {

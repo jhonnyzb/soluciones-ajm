@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { LoginService } from './login-.service';
 import { ToastrService } from 'ngx-toastr';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+
+
 
 
 
@@ -15,8 +18,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
 
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
+  dataUserSubscription: Subscription;
   formulario: FormGroup;
   formularioReset: FormGroup;
   timetoast: number = 3000;
@@ -27,11 +31,16 @@ export class LoginComponent implements OnInit {
   constructor(private afAuth: AngularFireAuth, private router: Router, private authServices: LoginService, private toastr: ToastrService, private Formbuilder: FormBuilder) { }
 
   ngOnInit() {
-
+    this.dataUserSubscription = this.authServices.getDataUser().subscribe(user => {
+      if (user) {
+        this.router.navigate(['/admin']);
+      }
+    })
     this.buildForm();
-    this.buildFormReset()
-
+    this.buildFormReset();
   }
+
+  
 
   private buildForm() {
 
@@ -49,7 +58,7 @@ export class LoginComponent implements OnInit {
 
     this.formularioReset = this.Formbuilder.group(
       {
-        mailReset: ['', [ Validators.required, Validators.pattern(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/)]]
+        mailReset: ['', [Validators.required, Validators.pattern(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/)]]
       }
     )
 
@@ -82,7 +91,7 @@ export class LoginComponent implements OnInit {
       }).catch(
         (err) => {
           this.toastr.error('Verifique que el correo ingresado sea correcto y existente', 'Error de correo', {
-            timeOut: this.timetoast, progressBar: true, progressAnimation: 'increasing', 
+            timeOut: this.timetoast, progressBar: true, progressAnimation: 'increasing',
             positionClass: 'toast-top-full-width'
           })
 
@@ -123,6 +132,11 @@ export class LoginComponent implements OnInit {
       error = "Email invalido";
     }
     return error;
+  }
+
+
+  ngOnDestroy() {
+    this.dataUserSubscription.unsubscribe();
   }
 
 }
