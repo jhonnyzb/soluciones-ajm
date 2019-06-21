@@ -14,7 +14,7 @@ import { LoginService } from '../modulos/login/login-.service';
 export class LayoutadminComponent implements OnInit, OnDestroy {
 
 
-  email: string;
+  email: string = '';
   dataUserSubscription: Subscription;
 
   constructor(public afsAuth: AngularFireAuth, private router: Router, private afsAuthservices: LoginService) { }
@@ -36,12 +36,10 @@ export class LayoutadminComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.afsAuth.auth.signOut();
-    
     this.router.navigate(['/usuarios/login'])
   }
 
   ngOnDestroy() {
-    this.email ='';
     this.dataUserSubscription.unsubscribe();
   }
 

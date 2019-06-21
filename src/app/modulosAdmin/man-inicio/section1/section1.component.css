@@ -1,7 +1,8 @@
 hr.style1{
     border-top: 1px solid gray;
     margin-top: 0%;
-    padding: 0%
+    padding: 0%;
+    margin-bottom: 5px
  }
  h4{
      margin-bottom: 5px;
@@ -13,4 +14,13 @@ hr.style1{
  .pading{
     padding-right: 50px;
     padding-left: 50px
+ }
+
+ .texto h5{
+    color: rgb(182, 180, 180);
+    margin-top: 5px
+ }
+ .margin{
+    margin-left: 10%;
+    margin-right: 10%
  }
