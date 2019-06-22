@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modulos/shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -26,6 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     SharedModule,
     ToastrModule.forRoot(),
+    SweetAlert2Module.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireAuthModule,

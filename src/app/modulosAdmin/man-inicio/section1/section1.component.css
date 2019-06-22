@@ -24,3 +24,16 @@ hr.style1{
     margin-left: 10%;
     margin-right: 10%
  }
+
+ .reauth-email {
+   display: block;
+   color: red;
+   line-height: 2;
+   margin-bottom: 10px;
+   font-size: 14px;
+   text-align: left;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+ 
+ }

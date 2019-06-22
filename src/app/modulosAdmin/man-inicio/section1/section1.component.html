@@ -35,9 +35,9 @@
 <hr class="style1">
 <div class="row text-center ">
   <div class="col-md-12">
-    <button class="btn btn-success" (click)="Vformadd()">Agregar</button>
-    <button class="btn btn-primary margin">Actualizar</button>
-    <button class="btn btn-danger">Eliminar</button>
+    <button class="btn btn-success" (click)="Vformadd()">Agregar Slide</button>
+    <button class="btn btn-primary margin">Actualizar Slide</button>
+    <button class="btn btn-danger">Eliminar Slide</button>
   </div>
 </div>
 <hr>
@@ -45,22 +45,26 @@
   <div class="col-md-12">
     <form [formGroup]="formularioAdd">
       <div class="form-group">
-        <label for="inputAddress">Titulo</label>
+        <label >Titulo</label>
         <input type="text" formControlName="titulo" class="form-control">
+        <span class="reauth-email" >{{getErrorHomeSection1('titulo')}}</span>
       </div>
       <div class="form-group">
-        <label for="inputAddress2">Descripcion</label>
+        <label >Descripcion</label>
         <input type="text" formControlName="descripcion" class="form-control">
+        <span class="reauth-email" >{{getErrorHomeSection1('descripcion')}}</span>
       </div>
       <div class="form-group">
-        <label for="inputAddress3">Imagen</label>
-        <input type="file" formControlName="url" class="form-control">
+        <label >Imagen(JPG o PNG)</label>
+        <input type="file" formControlName="url" (change)="onFileChange($event)" class="form-control">
+        <span class="reauth-email" >{{validatefileUpload}}</span>
       </div>
-      <button class="btn btn-warning"  [disabled]="formularioAdd.invalid" (click)="previsualizar(formularioAdd)">Previsualizar</button>&nbsp;
-      <button class="btn btn-danger"  [disabled]="formularioAdd.invalid" (click)="borrar()">Borrar</button>&nbsp;
-      <button type="submit" [disabled]="formularioAdd.invalid" class="btn btn-primary">Guardar</button>
+      <button class="btn btn-warning"  *ngIf="!formularioAdd.invalid && GattingBotton" (click)="previsualizar(formularioAdd)">Previsualizar</button>&nbsp;
+      <button class="btn btn-danger" (click)="RemoveText()">Borrar</button>&nbsp;
+      <button type="submit" *ngIf="!formularioAdd.invalid && GattingBotton" class="btn btn-primary">Guardar</button>
     </form>
 
   </div>
 </div>
 <br><br>
+
