@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { LayoutusuariosComponent } from './layoutusuarios/layoutusuarios.component';
 import { LayoutadminComponent } from './layoutadmin/layoutadmin.component';
 import { environment } from 'src/environments/environment';
@@ -33,8 +34,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-  
-
+    AngularFireStorageModule
   ],
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]

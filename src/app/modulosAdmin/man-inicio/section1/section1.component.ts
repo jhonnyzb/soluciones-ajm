@@ -2,7 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InicioInterfacesSlider } from 'src/app/modulos/inicio/iniciointerfaces';
 import { InicioService } from 'src/app/modulos/inicio/inicio.service';
 import { Subscription } from 'rxjs';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { AngularFireStorage } from '@angular/fire/storage';
+
 
 
 @Component({
@@ -15,12 +17,17 @@ export class Section1Component implements OnInit, OnDestroy {
   InfoSlider: Array<InicioInterfacesSlider> = new Array<InicioInterfacesSlider>();
   slide: InicioInterfacesSlider;
   InfosliderSubscription: Subscription;
+  PorcentSubscription: Subscription;
+  GeturlDowloadSubscription: Subscription;
   VformAdd: boolean = false;
   formularioAdd: FormGroup;
-  validatefileUpload: string = ''
+  validatefileUpload: string = '';
   GattingBotton: boolean = false;
+  uploadPercent: number = 0;
+  FileInput: string;
+  public ref;
 
-  constructor(private afs: InicioService, private Formbuilder: FormBuilder) { }
+  constructor(private afs: InicioService, private Formbuilder: FormBuilder, private storage: AngularFireStorage) { }
 
   ngOnInit() {
 
@@ -43,21 +50,36 @@ export class Section1Component implements OnInit, OnDestroy {
       {
         titulo: ['', Validators.required],
         descripcion: ['', Validators.required],
-        url:['']
+        url: ['']
       }
     )
 
   }
 
   onFileChange(event) {
-     const file = event.target.files[0];
+    const file = event.target.files[0];
     if (file) {
       const extension1 = file.type.split('/')[1].toLowerCase();;
-      if (extension1 !== 'png' && extension1 !== 'jpeg' && extension1 !== 'jpg' ) {
-        this.GattingBotton=false;
+      if (extension1 !== 'png' && extension1 !== 'jpeg' && extension1 !== 'jpg') {
+        this.GattingBotton = false;
+        event.target.value = '';
         this.validatefileUpload = '*Formato no valido';
+
       } else {
-        this.GattingBotton = true;
+        const id = Math.random().toString(36).substring(2);
+        const filepatch = `Slider/${id}.${extension1}`;
+        this.ref = this.storage.ref(filepatch);
+        const task = this.storage.upload(filepatch, file);
+        this.PorcentSubscription = task.percentageChanges().subscribe(
+          (porcent) => {
+            this.uploadPercent = Math.round(porcent);
+            if (this.uploadPercent == 100) {
+              this.GattingBotton = true;
+            }
+          }, (err) => {
+            console.log(err)
+          }
+        );
         this.validatefileUpload = '';
       }
     }
@@ -65,19 +87,35 @@ export class Section1Component implements OnInit, OnDestroy {
   };
 
 
+  haber() {
+    // this.GeturlDowloadSubscription = this.ref.getDownloadURL().subscribe(
+    //   (url) => {
+    //     this.URLPublica = url;
+    //   },
+    //   (err) => {
+    //     console.log(err)
+    //   })
+  }
 
   previsualizar(form: FormGroup) {
-    this.slide = {
-      descripcion: form.value.descripcion,
-      titulo: form.value.titulo,
-      url: form.value.url
-    }
-    this.InfoSlider.push(this.slide);
+    this.GeturlDowloadSubscription = this.ref.getDownloadURL().subscribe(
+      (url) => {
+        this.slide = {
+          descripcion: form.value.descripcion,
+          titulo: form.value.titulo,
+          url: url
+        }
+        this.InfoSlider.push(this.slide);
+      
+      })
+
+
   }
 
 
   RemoveText() {
-    this.GattingBotton=false;
+    this.uploadPercent = 0;
+    this.GattingBotton = false;
     this.validatefileUpload = ''
     this.formularioAdd.reset();
     this.getData();
@@ -85,13 +123,11 @@ export class Section1Component implements OnInit, OnDestroy {
 
 
   Vformadd() {
-    this.GattingBotton=false;
+    this.GattingBotton = false;
     this.validatefileUpload = ''
     this.formularioAdd.reset();
     this.VformAdd = !this.VformAdd;
   }
-
-
 
 
 
@@ -100,7 +136,6 @@ export class Section1Component implements OnInit, OnDestroy {
     const control = this.formularioAdd.get(controlName);
     if (control.touched && control.errors != null) {
       error = '*Campo requerido';
-
     }
     return error;
   }
@@ -109,7 +144,13 @@ export class Section1Component implements OnInit, OnDestroy {
 
 
   ngOnDestroy() {
-    this.InfosliderSubscription.unsubscribe()
+    this.InfosliderSubscription.unsubscribe();
+    if (this.PorcentSubscription) {
+      this.PorcentSubscription.unsubscribe();
+    }
+    if (this.GeturlDowloadSubscription) {
+      this.GeturlDowloadSubscription.unsubscribe();
+    }
 
   }
 
