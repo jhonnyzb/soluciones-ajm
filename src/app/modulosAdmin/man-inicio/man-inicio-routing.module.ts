@@ -16,6 +16,11 @@ const routes: Routes = [
     redirectTo: 'section1',
     pathMatch: 'full'
   },
+  {
+    path: '**',
+    redirectTo: 'section1',
+    pathMatch: 'full'
+  }
 
 ];
 

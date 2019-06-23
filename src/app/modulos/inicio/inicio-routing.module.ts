@@ -28,6 +28,11 @@ const routes: Routes =
     redirectTo: 'iniciouno',
     pathMatch: 'full'
   },
+  {
+    path: '**',
+    redirectTo: 'iniciouno',
+    pathMatch: 'full'
+  }
 
 ];
 

@@ -20,6 +20,7 @@ export class Section1Component implements OnInit, OnDestroy {
   PorcentSubscription: Subscription;
   GeturlDowloadSubscription: Subscription;
   VformAdd: boolean = false;
+  Previewbanner:boolean = false;
   formularioAdd: FormGroup;
   validatefileUpload: string = '';
   GattingBotton: boolean = false;
@@ -97,7 +98,11 @@ export class Section1Component implements OnInit, OnDestroy {
     //   })
   }
 
-  previsualizar(form: FormGroup) {
+  Preview(form: FormGroup) {
+
+    if (this.Previewbanner){
+      this.getData();
+    }
     this.GeturlDowloadSubscription = this.ref.getDownloadURL().subscribe(
       (url) => {
         this.slide = {
@@ -106,7 +111,7 @@ export class Section1Component implements OnInit, OnDestroy {
           url: url
         }
         this.InfoSlider.push(this.slide);
-      
+        this.Previewbanner = true;
       })
 
 
@@ -116,6 +121,7 @@ export class Section1Component implements OnInit, OnDestroy {
   RemoveText() {
     this.uploadPercent = 0;
     this.GattingBotton = false;
+    this.Previewbanner = false;
     this.validatefileUpload = ''
     this.formularioAdd.reset();
     this.getData();

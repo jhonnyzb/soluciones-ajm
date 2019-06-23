@@ -41,6 +41,8 @@
   </div>
 </div>
 <hr>
+
+<!-- form add slider -->
 <div class="row" *ngIf="VformAdd">
   <div class="col-md-12">
     <form [formGroup]="formularioAdd">
@@ -55,7 +57,7 @@
         <span class="reauth-email">{{getErrorHomeSection1('descripcion')}}</span>
       </div>
       <div class="form-group">
-        <label>Imagen(JPG o PNG)</label>
+        <label>Imagen(JPG o PNG), tamaño(1024x360)</label>
         <input type="file" formControlName="url" (change)="onFileChange($event)" class="form-control">
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(uploadPercent) + '%'"
@@ -64,11 +66,15 @@
         <span class="reauth-email">{{validatefileUpload}}</span>
       </div>
       <button class="btn btn-warning" *ngIf="!formularioAdd.invalid && GattingBotton"
-        (click)="previsualizar(formularioAdd)" >Previsualizar</button>&nbsp;
+        (click)="Preview(formularioAdd)" >Previsualizar</button>&nbsp;
       <button class="btn btn-danger" (click)="RemoveText()">Borrar</button>&nbsp;
       <button  *ngIf="!formularioAdd.invalid && GattingBotton"  (click)="haber()" class="btn btn-primary">Guardar</button>
     </form>
 
   </div>
 </div>
+<!-- form add slider -->
+
+
+
 <br><br>
