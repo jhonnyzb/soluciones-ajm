@@ -16,7 +16,14 @@ export class InicioService {
 
   public getInfoSlider() {
 
-    return this.firestore.collection<InicioInterfacesSlider>('Pag_Inicio_Slider').valueChanges();
+    return this.firestore.collection<InicioInterfacesSlider>('Pag_Inicio_Slider').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as InicioInterfacesSlider;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+
   }
 
 

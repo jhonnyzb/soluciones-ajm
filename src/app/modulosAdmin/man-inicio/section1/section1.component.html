@@ -1,80 +1,23 @@
 <h4>Home / section1</h4>
 <hr class="style1">
-
-<div class="pading">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" *ngFor="let image of InfoSlider;let i = index"
-        style="background-color:black" [attr.data-slide-to]="i" [ngClass]="i == 0 ? 'active' : ''">
-      </li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item" *ngFor="let image of InfoSlider; let k = index"
-        [ngClass]="k == 0 ? 'item active' : 'item'">
-        <img class="d-block w-100" [src]="image.url" style="height: 350px;">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{image.titulo}}</h5>
-          <p>{{image.descripcion}}</p>
-        </div>
-      </div>
-
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-<div class="text-center texto">
-  <h5>Previsualizacion del componente</h5>
-</div>
-<hr class="style1">
-<div class="row text-center ">
+<div class="row ">
   <div class="col-md-12">
-    <button class="btn btn-success" (click)="Vformadd()">Agregar Slide</button>
-    <button class="btn btn-primary margin">Actualizar Slide</button>
-    <button class="btn btn-danger">Eliminar Slide</button>
+      <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='addslider' routerLinkActive="active"><span class="fa fa-plus-square"></span>&nbsp;Agregar Slide</a>
+          </li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink='updateslider' routerLinkActive="active" ><span class="fa fa-refresh"></span>&nbsp;Actualizar Slide</a>
+          </li>&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink='deleteslider' routerLinkActive="active" ><span class="fa fa-remove"></span>&nbsp;Eliminar Slide</a>
+          </li>&nbsp;
+        </ul>
+    
   </div>
 </div>
 <hr>
-
-<!-- form add slider -->
-<div class="row" *ngIf="VformAdd">
-  <div class="col-md-12">
-    <form [formGroup]="formularioAdd">
-      <div class="form-group">
-        <label>Titulo</label>
-        <input type="text" formControlName="titulo" class="form-control">
-        <span class="reauth-email">{{getErrorHomeSection1('titulo')}}</span>
-      </div>
-      <div class="form-group">
-        <label>Descripcion</label>
-        <input type="text" formControlName="descripcion" class="form-control">
-        <span class="reauth-email">{{getErrorHomeSection1('descripcion')}}</span>
-      </div>
-      <div class="form-group">
-        <label>Imagen(JPG o PNG), tamaño(1024x360)</label>
-        <input type="file" formControlName="url" (change)="onFileChange($event)" class="form-control">
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(uploadPercent) + '%'"
-              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{uploadPercent}} %</div>
-          </div>
-        <span class="reauth-email">{{validatefileUpload}}</span>
-      </div>
-      <button class="btn btn-warning" *ngIf="!formularioAdd.invalid && GattingBotton"
-        (click)="Preview(formularioAdd)" >Previsualizar</button>&nbsp;
-      <button class="btn btn-danger" (click)="RemoveText()">Borrar</button>&nbsp;
-      <button  *ngIf="!formularioAdd.invalid && GattingBotton"  (click)="haber()" class="btn btn-primary">Guardar</button>
-    </form>
-
-  </div>
-</div>
-<!-- form add slider -->
+<router-outlet></router-outlet>
 
 
 
-<br><br>

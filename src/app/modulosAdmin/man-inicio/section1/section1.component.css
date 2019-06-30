@@ -4,36 +4,24 @@ hr.style1{
     padding: 0%;
     margin-bottom: 5px
  }
+
+ /* -----------navbar----------- */
+
+.nav-link{
+   font-weight: bold;
+   color:black;
+   border: #218838 1px solid
+}
+
+
+ .nav-pills .nav-link.active {
+   color: #fff;
+   background-color: #218838;
+  
+ }
+ .col-md-12{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+ }
  h4{
-     margin-bottom: 5px;
- }
-
- .carousel-item {
-    transition: transform 1s ease-in-out; 
- }
- .pading{
-    padding-right: 50px;
-    padding-left: 50px
- }
-
- .texto h5{
-    color: rgb(182, 180, 180);
-    margin-top: 5px
- }
- .margin{
-    margin-left: 10%;
-    margin-right: 10%
- }
-
- .reauth-email {
-   display: block;
-   color: red;
-   line-height: 2;
-   margin-bottom: 10px;
-   font-size: 14px;
-   text-align: left;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
- 
+    font-family: Georgia, 'Times New Roman', Times, serif;
  }

@@ -14,6 +14,8 @@ export class IniciocontableComponent implements OnInit {
   InfoPieContable: Array<InicioInterfacesPie> = new Array<InicioInterfacesPie>();
   /* InfoPieContable: Observable<InicioInterfacesPie[]>; */
 
+  id:string=''
+
   constructor(private afs: InicioService) {
   }
 
@@ -27,7 +29,6 @@ export class IniciocontableComponent implements OnInit {
       console.log(this.InfoPieContable) */
       this.afs.getInfoPieContable().subscribe((data) => {
       this.InfoPieContable = data;
-    
     });
 
   

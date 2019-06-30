@@ -1,0 +1,38 @@
+h4{
+    margin-bottom: 5px;
+}
+
+.carousel-item {
+   transition: transform 1s ease-in-out; 
+}
+.pading{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   padding-right: 50px;
+   padding-left: 50px
+}
+
+.texto h5{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color: rgb(182, 180, 180);
+   margin-top: 5px
+}
+.margin{
+   margin-left: 10%;
+   margin-right: 10%
+}
+
+.reauth-email {
+  display: block;
+  color: red;
+  line-height: 2;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.col-md-12{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}

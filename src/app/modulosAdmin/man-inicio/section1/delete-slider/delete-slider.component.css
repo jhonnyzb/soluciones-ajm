@@ -1,0 +1,11 @@
+img {
+    width: 100%;
+    height: 230px;
+}
+hr.style1{
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.card{
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
