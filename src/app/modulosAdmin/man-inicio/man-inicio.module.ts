@@ -5,11 +5,10 @@ import { ManInicioRoutingModule } from './man-inicio-routing.module';
 import { Section1Component } from './section1/section1.component';
 import { Section2Component } from './section2/section2.component';
 import { AddsliderComponent } from './section1/addslider/addslider.component';
-import { UpdateSliderComponent } from './section1/update-slider/update-slider.component';
 import { DeleteSliderComponent } from './section1/delete-slider/delete-slider.component';
 
 @NgModule({
-  declarations: [Section1Component, Section2Component, AddsliderComponent, UpdateSliderComponent, DeleteSliderComponent],
+  declarations: [Section1Component, Section2Component, AddsliderComponent, DeleteSliderComponent],
   imports: [
     CommonModule,
     FormsModule,

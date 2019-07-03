@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { Section1Component } from './section1/section1.component';
 import { Section2Component } from './section2/section2.component';
 import { AddsliderComponent } from './section1/addslider/addslider.component';
-import { UpdateSliderComponent } from './section1/update-slider/update-slider.component';
 import { DeleteSliderComponent } from './section1/delete-slider/delete-slider.component';
 
 const routes: Routes = [
@@ -13,9 +12,6 @@ const routes: Routes = [
     children: [
       {
         path: 'addslider', component: AddsliderComponent
-      },
-      {
-        path: 'updateslider', component: UpdateSliderComponent
       },
       {
         path: 'deleteslider', component: DeleteSliderComponent

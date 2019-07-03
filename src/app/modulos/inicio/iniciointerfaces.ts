@@ -1,6 +1,7 @@
 
 
 export interface InicioInterfacesSlider {
+  id?:string
   url: string;
   titulo: string;
   descripcion: string;

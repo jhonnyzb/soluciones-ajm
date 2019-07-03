@@ -27,11 +27,6 @@ export class AddsliderComponent implements OnInit, OnDestroy {
   uploadPercent: number = 0;
   public ref;
 
-  variable: string = '';
-  variable1: string = '';
-
-
-
 
   constructor(private afs: InicioService, private Formbuilder: FormBuilder, private storage: AngularFireStorage, private serviceAdmin: AdminService) { }
 
@@ -68,7 +63,7 @@ export class AddsliderComponent implements OnInit, OnDestroy {
 
     if (file) {
       this.GattingBotton = false;
-      const extension1 = file.type.split('/')[1].toLowerCase();;
+      const extension1 = file.type.split('/')[1].toLowerCase();
       if (extension1 !== 'png' && extension1 !== 'jpeg' && extension1 !== 'jpg') {
         this.GattingBotton = false;
         event.target.value = '';

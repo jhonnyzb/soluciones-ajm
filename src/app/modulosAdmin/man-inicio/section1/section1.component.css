@@ -13,7 +13,6 @@ hr.style1{
    border: #218838 1px solid
 }
 
-
  .nav-pills .nav-link.active {
    color: #fff;
    background-color: #218838;
@@ -25,3 +24,9 @@ hr.style1{
  h4{
     font-family: Georgia, 'Times New Roman', Times, serif;
  }
+
+ span{
+   font-size: 18px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+ 

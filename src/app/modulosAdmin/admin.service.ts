@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InicioInterfacesSlider } from '../modulos/inicio/iniciointerfaces';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 
 
@@ -8,6 +8,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class AdminService {
+
+
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -18,6 +20,10 @@ export class AdminService {
 
   deleteSlide(slideKey: string) {
     return this.firestore.collection('Pag_Inicio_Slider').doc(slideKey).delete();
+  }
+
+  updateSlide(id:string, Slide:InicioInterfacesSlider) {
+    return this.firestore.collection('Pag_Inicio_Slider').doc(id).update(Slide);
   }
 // end home/section1
 
