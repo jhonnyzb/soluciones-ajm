@@ -14,7 +14,7 @@ export interface InicioInterfacesSection2 {
   nombre_boton?: string;
 }
 export interface InicioInterfacesSection4 {
-
+  id?: string;
   titulo: string;
   descripcion: string;
   icono: string;
@@ -55,6 +55,7 @@ export interface InicioInterfacesSection8 {
 }
 
 export interface InicioInterfacesCuerpo {
+  id?:string;
   icon: string;
   titulo: string;
   descripcion: string;

@@ -10,7 +10,7 @@ import { InicioService } from './inicio.service';
 })
 export class InicioComponent implements OnInit {
 
-  InfoSlider: Array<InicioInterfacesSlider> = new Array<InicioInterfacesSlider>();
+  InfoSlider: InicioInterfacesSlider[] = [];
   InfoCuerpo: Array<InicioInterfacesCuerpo> = new Array<InicioInterfacesCuerpo>();
   Infosection4: Array<InicioInterfacesSection4> = new Array<InicioInterfacesSection4>();
   Infosection5_1: Array<InicioInterfacesSection5_1> = new Array<InicioInterfacesSection5_1>();
@@ -24,7 +24,7 @@ export class InicioComponent implements OnInit {
 
 
   ngOnInit() {
-    
+
     this.getData();
   }
 
@@ -32,7 +32,7 @@ export class InicioComponent implements OnInit {
 
     this.afs.getInfoSlider().subscribe((data) => {
       this.InfoSlider = data;
-  
+
     });
 
 
@@ -50,7 +50,7 @@ export class InicioComponent implements OnInit {
 
     this.afs.getInicioSection5_1('i5CIxJLrRhRnyfPzh1jg').subscribe((data) => {
       this.Infosection5_1 = data;
-      
+
     });
 
     this.afs.getInicioSection5_2('ykSHohz9g1DHGowLRoKz').subscribe((data) => {

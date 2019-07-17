@@ -105,7 +105,6 @@ export class AddsliderComponent implements OnInit, OnDestroy {
         if (previewSend === 1) {
           this.InfoSlider.push(this.slide);
           this.Previewbanner = true;
-          console.log('preview')
         }
         else{
           this.serviceAdmin.createSlider(this.slide).then(

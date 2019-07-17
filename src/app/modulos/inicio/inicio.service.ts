@@ -35,7 +35,14 @@ export class InicioService {
 
   public getInicioSection4() {
 
-    return this.firestore.collection<InicioInterfacesSection4>('Inicio_section4').valueChanges();
+    return this.firestore.collection<InicioInterfacesSection4>('Inicio_section4').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as InicioInterfacesSection4;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+
   }
 
 
@@ -66,7 +73,14 @@ export class InicioService {
 
   public getInfoCuerpo() {
 
-    return this.firestore.collection<InicioInterfacesCuerpo>('Home_Cuerpo').valueChanges();
+    return this.firestore.collection<InicioInterfacesCuerpo>('Home_Cuerpo').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as InicioInterfacesCuerpo;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+
   }
 
 

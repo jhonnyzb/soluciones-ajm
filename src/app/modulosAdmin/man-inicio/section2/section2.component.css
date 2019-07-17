@@ -1,0 +1,15 @@
+.centrar
+{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+hr.style1{
+    border-top: 3px solid coral;
+    margin-left: 45%;
+    margin-right: 45%;
+  }
+  h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+ }

@@ -1,3 +1,37 @@
-<p>
-  section2 works!
-</p>
+<!-- section2 bienvenido-->
+<h4>Home / section2</h4>
+<hr>
+<br>
+<div class="container">
+  <div class="centrar">
+    <h1>{{infoheader.titulo}}</h1>
+    <hr class="style1">
+  </div><br>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 centrar">
+      <!-- Text -->
+      <h4>{{infoheader.descripcion}}</h4><br>
+      <button class="btn btn-info">{{infoheader.nombre_boton}}</button>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+<hr>
+<br><br><br>
+<!-- form section2-->
+<form (ngSubmit)="UpdateSection2()">
+  <div class="form-group">
+    <label for="titulo">Titulo</label>
+    <input type="text" class="form-control form-control-lg" name="titulo" [(ngModel)]="infoheader.titulo">
+  </div>
+  <div class="form-group">
+    <label for="descripcion">Parrafo</label>
+    <textarea name="descripcion" class="form-control form-control-lg" [(ngModel)]="infoheader.descripcion"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="boton">Texto Boton</label>
+    <input type="text" class="form-control form-control-lg" name="nombre_boton" [(ngModel)]="infoheader.nombre_boton">
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar cambios</button>
+</form>
