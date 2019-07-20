@@ -127,7 +127,7 @@ export class DeleteSliderComponent implements OnInit, OnDestroy {
     const file = event.target.files[0];
     if (file) {
       const extension1 = file.type.split('/')[1].toLowerCase();
-      if (extension1 !== 'png' && extension1 !== 'jpeg' && extension1 !== 'jpg') {
+      if (extension1 !== 'png' && extension1 !== 'jpeg' && extension1 !== 'jpg' && extension1 !== 'webp' ) {
         event.target.value = '';
         this.validatefileUpload = '*Formato no valido';
 

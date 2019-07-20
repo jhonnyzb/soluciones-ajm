@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 border ">
+      <h3>{{Infosection5_0.titulo}}</h3>
+      <hr class="style4">
+    
+    </div> 
+    <div class="col-md-6 border">
+      <form (ngSubmit)="UpdateTitle()">
+        <div class="form-group">
+          <label >Titulo</label>
+          <input type="text" class="form-control" name="titulo" [(ngModel)]="Infosection5_0.titulo" >
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </form>
+    
+    </div>
+  
+  </div>
+</div>

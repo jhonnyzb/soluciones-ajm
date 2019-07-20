@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InicioInterfacesSlider, InicioInterfacesSection2, InicioInterfacesCuerpo, InicioInterfacesSection4 } from '../modulos/inicio/iniciointerfaces';
+import { InicioInterfacesSlider, InicioInterfacesSection2, InicioInterfacesCuerpo, InicioInterfacesSection4, InicioInterfacesSection5_0 } from '../modulos/inicio/iniciointerfaces';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 
@@ -56,6 +56,11 @@ export class AdminService {
   deleteGrid(gridid: string) {
     return this.firestore.collection('Inicio_section4').doc(gridid).delete();
   }
- // end home/section4
- 
+  // end home/section4
+  // home/section5
+  uddateTitle(id:string, title:InicioInterfacesSection5_0){
+    return this.firestore.collection('Inicio_section5').doc(id).update(title)
+
+  }
+
 }
