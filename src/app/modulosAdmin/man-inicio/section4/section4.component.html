@@ -2,27 +2,25 @@
 <hr>
 <div class="container">
   <div class="row">
-    <button type="button" class="btn btn-success" (click)="addGrid()" data-toggle="modal"
-      data-target="#exampleModalCenter"><span class="fa fa-plus-circle" ></span> Agregar Grid</button>
+    <button type="button" class="btn btn-success btn-block" (click)="addGrid()" data-toggle="modal"
+      data-target="#exampleModalCenter"><span class="fa fa-plus"></span> Agregar Grid
+    </button>
   </div>
 </div><br>
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-4 c" style="margin-bottom:30px;" *ngFor="let data of Infosection4">
+    <div class="col-sm-12 col-md-6 col-lg-4 c" style="margin-bottom:30px;" *ngFor="let data of Infosection4">
       <div class="crmTile">
         <i class="fa fa-{{data.icono}} fa-2x f"></i><br>
         <h5>{{data.titulo}}</h5>
       </div>
-      <p class="text">
+      <p class="text-justify mb-4">
         {{data.descripcion}}
-      </p><br>
-      <div class="text-center">
-        <button class="btn btn-danger" (click)="removeGrid(data.id)"><span class="fa fa-trash"></span>
-          Eliminar</button>
-        &nbsp;
-        <button class="btn btn-primary" (click)="updateGrid(data)" data-toggle="modal"
-          data-target="#exampleModalCenter"><span class="fa fa-edit"></span> Actualizar</button>
-      </div>
+      </p>
+      <button class="btn btn-danger mr-2 mb-1 ml-5" (click)="removeGrid(data.id)"><span class="fa fa-trash"></span>
+        Eliminar</button>
+      <button class="btn btn-primary float-right mr-5" (click)="updateGrid(data)" data-toggle="modal"
+        data-target="#exampleModalCenter"><span class="fa fa-edit"></span> Actualizar</button>
     </div>
   </div>
 </div>
@@ -30,8 +28,8 @@
 
 
 <!-- modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,7 +39,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="formularioAddGrid" >
+        <form [formGroup]="formularioAddGrid">
           <div class="form-group">
             <label for="exampleFormControlInput1">Icono</label>
             <input type="text" class="form-control" formControlName="icon" placeholder="Nombre icono">
@@ -49,20 +47,23 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Titulo</label>
-            <input type="text" class="form-control" formControlName="titulo"  placeholder="Titulo">
+            <input type="text" class="form-control" formControlName="titulo" placeholder="Titulo">
             <span class="reauth-email">{{getErrorHomeSection4('titulo')}}</span>
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Descripcion</label>
-            <textarea type="text" class="form-control" formControlName="descripcion" placeholder="Descripcion"></textarea>
+            <textarea type="text" class="form-control" formControlName="descripcion"
+              placeholder="Descripcion"></textarea>
             <span class="reauth-email">{{getErrorHomeSection4('descripcion')}}</span>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"  (click)="clearForm()" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" *ngIf="Isadd && !formularioAddGrid.invalid"  (click)="saveUpdateGrid(formularioAddGrid, 1)"  data-dismiss="modal" >Agregar Grid</button>
-        <button type="button" class="btn btn-primary" *ngIf="Isupdate && !formularioAddGrid.invalid"  (click)="saveUpdateGrid(formularioAddGrid, 2)" data-dismiss="modal" >Actualizar Grid</button>
+        <button type="button" class="btn btn-secondary" (click)="clearForm()" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" *ngIf="Isadd && !formularioAddGrid.invalid"
+          (click)="saveUpdateGrid(formularioAddGrid, 1)" data-dismiss="modal">Agregar Grid</button>
+        <button type="button" class="btn btn-primary" *ngIf="Isupdate && !formularioAddGrid.invalid"
+          (click)="saveUpdateGrid(formularioAddGrid, 2)" data-dismiss="modal">Actualizar Grid</button>
       </div>
     </div>
   </div>
